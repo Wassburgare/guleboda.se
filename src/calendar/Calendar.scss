@@ -3,13 +3,13 @@ $main-text-color: #262626;
 $date-text-color: #262626;
 $date-not-in-month-text-color: #b5b5b5;
 
-$week-number-text-color: #606060;
+$week-number-text-color: #5c5c5c;
 
-$booked-bg-color: #e5383d;
+$booked-bg-color: #e13f3f;
 $booked-date-text-color: white;
 $booked-date-not-in-month-text-color: #ffa8a8;
 
-$hovered-bg-color: #7ec957;
+$hovered-bg-color: #73d349;
 $hovered-date-text-color: white;
 $hovered-date-not-in-month-text-color: #bbff99;
 
@@ -44,13 +44,17 @@ $hovered-date-not-in-month-text-color: #bbff99;
 }
 
 .calendar {
+  font-family: 'Open Sans', sans-serif;
   color: $main-text-color;
   user-select: none;
 
   .month-selector {
+    font-weight: bold;
+    font-size: 20px;
     text-align: center;
 
     input, span {
+      height: 30px;
       vertical-align: middle;
     }
 
@@ -62,6 +66,7 @@ $hovered-date-not-in-month-text-color: #bbff99;
 
   .weekdays {
     font-weight: bold;
+    font-size: 18px;
 
     li:first-child {
       visibility: hidden;
