@@ -1,0 +1,19 @@
+$summary-box-bg-color: #51abef;
+$summary-box-padding: 30px;
+$summary-box-margin: 20px;
+$summary-box-width: 400px;
+$summary-box-text-color: white;
+
+.about {
+  .summary-box {
+    * {
+      color: $summary-box-text-color !important;
+    }
+
+    background-color: $summary-box-bg-color;
+    padding: 0 $summary-box-padding;
+    margin: 0 0 $summary-box-margin $summary-box-margin;
+    float: right;
+    width: $summary-box-width - $summary-box-padding * 2;
+  }
+}

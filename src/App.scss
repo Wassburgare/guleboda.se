@@ -1,0 +1,64 @@
+$separator-color: #e8e8e8;
+
+$text-color: #262626;
+$heading-color: #282828;
+$link-color: #0084ff;
+
+.App {
+  .content {
+    max-width: 980px;
+    margin: auto;
+    padding: 0 30px 0 30px;
+  }
+
+  p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+
+    color: $text-color;
+  }
+
+  a {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+
+    text-decoration: none;
+    color: $link-color;
+  }
+
+  h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+
+    color: $heading-color;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+
+    color: $heading-color;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+
+    color: $heading-color;
+    margin: 4px 0;
+  }
+
+  hr {
+    border-style: solid;
+    border-color: $separator-color;
+    margin: 0 0 15px 0;
+  }
+}

@@ -1,0 +1,210 @@
+$main-text-color: #262626;
+
+$date-text-color: #262626;
+$date-not-in-month-text-color: #b5b5b5;
+
+$week-number-text-color: #606060;
+
+$booked-bg-color: #e5383d;
+$booked-date-text-color: white;
+$booked-date-not-in-month-text-color: #ffa8a8;
+
+$hovered-bg-color: #7ec957;
+$hovered-date-text-color: white;
+$hovered-date-not-in-month-text-color: #bbff99;
+
+@mixin bgGradient($left-color, $right-color) {
+  background: linear-gradient(to right bottom, $left-color 0%, $left-color 49%, $right-color 50%, $right-color 100%);
+}
+
+@mixin dateGradient($bg-left, $bg-right, $text-left, $text-right, $not-in-month-text-left, $not-in-month-text-right) {
+  @include bgGradient($bg-left, $bg-right);
+
+  span {
+    @include bgGradient($text-left, $text-right);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &.not-in-month span {
+    @include bgGradient($not-in-month-text-left, $not-in-month-text-right);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@mixin removeTextGradient() {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+}
+
+.calendar {
+  color: $main-text-color;
+  user-select: none;
+
+  .month-selector {
+    text-align: center;
+
+    input, span {
+      vertical-align: middle;
+    }
+
+    span {
+      display: inline-block;
+      width: 50%;
+    }
+  }
+
+  .weekdays {
+    font-weight: bold;
+
+    li:first-child {
+      visibility: hidden;
+    }
+  }
+
+  // Layout
+  ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    li {
+      $width: (100 / 14);
+      $padding: (100 - ($width * 8)) / 13;
+
+      width: $width * 1%;
+      padding: 0 $padding * 1%;
+
+      display: inline-block;
+      position: relative;
+
+      text-align: center;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        padding-top: 100%;
+        vertical-align: middle;
+      }
+
+      span {
+        display: inline-block;
+        width: 2em;
+        line-height: 2em;
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:nth-child(2) {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding: 0;
+      }
+
+      &:nth-last-child(2) {
+        padding-right: $padding * 2%;
+      }
+    }
+  }
+
+  // Styling
+  &.mutable {
+    .week-row {
+      cursor: pointer;
+    }
+  }
+
+  .week-row {
+    .week-number {
+      color: $week-number-text-color;
+    }
+
+    .not-in-month {
+      color: $date-not-in-month-text-color;
+    }
+
+    &.hovered {
+      li {
+        &:not(:first-child) {
+          background: $hovered-bg-color;
+          color: $hovered-date-text-color;
+        }
+
+        &.not-in-month {
+          color: $hovered-date-not-in-month-text-color;
+        }
+
+        &:last-child {
+          @include dateGradient($hovered-bg-color, rgba(0,0,0,0), $hovered-date-text-color, $date-text-color, $hovered-date-not-in-month-text-color, $date-not-in-month-text-color);
+        }
+      }
+    }
+
+    &.next-hovered {
+      li:last-child {
+        @include dateGradient(rgba(0,0,0,0), $hovered-bg-color, $date-text-color, $hovered-date-text-color, $date-not-in-month-text-color, $hovered-date-not-in-month-text-color);
+      }
+    }
+
+    &.booked {
+      li {
+        &:not(:first-child) {
+          background: $booked-bg-color;
+          color: $booked-date-text-color;
+        }
+
+        &.not-in-month {
+          color: $booked-date-not-in-month-text-color;
+        }
+
+        &:last-child {
+          @include dateGradient($booked-bg-color, rgba(0,0,0,0), $booked-date-text-color, $date-text-color, $booked-date-not-in-month-text-color, $date-not-in-month-text-color);
+        }
+      }
+    }
+
+    &.next-booked {
+      li:last-child {
+        @include dateGradient(rgba(0,0,0,0), $booked-bg-color, $date-text-color, $booked-date-text-color, $date-not-in-month-text-color, $booked-date-not-in-month-text-color);
+      }
+    }
+
+    &.booked.next-hovered {
+      li:last-child {
+        @include dateGradient($booked-bg-color, $hovered-bg-color, $booked-date-text-color, $hovered-date-text-color, $booked-date-not-in-month-text-color, $hovered-date-not-in-month-text-color);
+      }
+    }
+
+    &.next-booked.hovered {
+      li:last-child {
+        @include dateGradient($hovered-bg-color, $booked-bg-color, $hovered-date-text-color, $booked-date-text-color, $hovered-date-not-in-month-text-color, $booked-date-not-in-month-text-color);
+      }
+    }
+
+    &.booked.next-booked {
+      li:last-child {
+        span {
+          @include removeTextGradient();
+        }
+
+        background: $booked-bg-color;
+        color: $booked-date-text-color;
+
+        &.not-in-month {
+          color: $booked-date-not-in-month-text-color;
+        }
+      }
+    }
+  }
+}
