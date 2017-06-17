@@ -4,6 +4,10 @@ $summary-box-margin: 20px;
 $summary-box-width: 400px;
 $summary-box-text-color: white;
 
+$imgRowCount: 3;
+$imgWidth: (100 / $imgRowCount) - 1;
+$imgPadding: (100 - $imgWidth * $imgRowCount) / ($imgRowCount - 1);
+
 .about {
   .summary-box {
     * {
@@ -15,5 +19,24 @@ $summary-box-text-color: white;
     margin: 0 0 $summary-box-margin $summary-box-margin;
     float: right;
     width: $summary-box-width - $summary-box-padding * 2;
+  }
+
+  .pswp-thumbnails {
+    font-size: 0;
+  }
+
+  .pswp-thumbnail {
+    display: inline-block;
+    width: $imgWidth * 1%;
+    padding-bottom: 1.25%;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    &:not(:first-child):not(:nth-child(#{$imgRowCount + 1})) {
+      padding-left: $imgPadding * 1%;
+    }
   }
 }
