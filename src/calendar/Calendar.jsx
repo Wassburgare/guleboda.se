@@ -126,7 +126,7 @@ class Calendar extends Component {
 
   render = () =>
     (
-      <div className={classNames('calendar', { mutable: this.props.isMutable })}>
+      <div className={classNames('calendar', { bookable: this.props.canBook })}>
         <div className="month-selector">
           <input
             type="image"
@@ -156,7 +156,7 @@ class Calendar extends Component {
 Calendar.defaultProps = {
   bookings: [],
   onWeekClick: () => {},
-  isMutable: false,
+  canBook: false,
 };
 
 Calendar.propTypes = {
@@ -167,7 +167,7 @@ Calendar.propTypes = {
     }),
   ),
   onWeekClick: PropTypes.func,
-  isMutable: PropTypes.bool,
+  canBook: PropTypes.bool,
 };
 
 export default Calendar;

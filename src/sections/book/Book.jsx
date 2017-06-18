@@ -11,7 +11,7 @@ class Book extends Component {
         <h2>Boka</h2>
         <hr />
         <Lorem count="2" />
-        <Calendar bookings={this.props.bookings} isMutable />
+        <Calendar bookings={this.props.bookings} />
         <Lorem count="1" />
       </div>
     );
