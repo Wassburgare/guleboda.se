@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Lorem from 'react-lorem-component';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import './Book.css';
 import Calendar from '../../calendar/Calendar';
 
@@ -8,7 +9,12 @@ class Book extends Component {
   render() {
     return (
       <div className="book">
-        <h2>Boka</h2>
+        <h2>
+          <FormattedMessage
+            id={'Book.heading'}
+            defaultMessage={'Book'}
+          />
+        </h2>
         <hr />
         <Lorem count="2" />
         <Calendar bookings={this.props.bookings} />
