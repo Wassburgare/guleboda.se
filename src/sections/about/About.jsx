@@ -3,7 +3,7 @@ import Lorem from 'react-lorem-component';
 import { PhotoSwipeGallery } from 'react-photoswipe';
 import 'react-photoswipe/lib/photoswipe.css';
 
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, injectIntl } from 'react-intl';
 
 import imageItems from './ImageLoader';
 import './About.css';
@@ -42,7 +42,7 @@ class About extends Component {
         </div>
         <Lorem />
         <PhotoSwipeGallery
-          items={imageItems}
+          items={imageItems(this.props.intl)}
           options={options}
           thumbnailContent={getThumbnailContent}
         />
@@ -51,4 +51,4 @@ class About extends Component {
   }
 }
 
-export default About;
+export default injectIntl(About);

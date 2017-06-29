@@ -1,3 +1,5 @@
+import { defineMessages } from 'react-intl';
+
 import cowsFull from './images/cows.jpg';
 import pathFull from './images/path.jpg';
 import pigsFull from './images/pigs.jpg';
@@ -6,14 +8,29 @@ import cowsThumb from './images/thumbnails/cows.jpg';
 import pathThumb from './images/thumbnails/path.jpg';
 import pigsThumb from './images/thumbnails/pigs.jpg';
 
-const imageItems = [
+const messages = defineMessages({
+  cows: {
+    id: 'About.image.cows',
+    defaultMessage: 'Live in an idyllic farm environment.',
+  },
+  pigs: {
+    id: 'About.image.pigs',
+    defaultMessage: 'Happy pigs that are allowed to root outside the whole summer!',
+  },
+  path: {
+    id: 'About.image.path',
+    defaultMessage: 'Go explore along dirt roads and crooked paths. Listen to the nature without any noise.',
+  },
+});
+
+const imageItems = intl => [
   {
     src: cowsFull,
     thumbnail: cowsThumb,
     msrc: cowsThumb,
     w: 1386,
     h: 780,
-    title: 'Bo i en idyllisk lantgårdsmiljö.',
+    title: intl.formatMessage(messages.cows),
   },
   {
     src: pigsFull,
@@ -21,7 +38,7 @@ const imageItems = [
     msrc: pigsThumb,
     w: 880,
     h: 495,
-    title: 'Glada grisar som får böka ute hela sommaren!',
+    title: intl.formatMessage(messages.pigs),
   },
   {
     src: pathFull,
@@ -29,7 +46,7 @@ const imageItems = [
     msrc: pathThumb,
     w: 1049,
     h: 590,
-    title: 'Gå på upptäcktsfärd längs grusvägar och krokiga stigar. Lyssna på naturens ljud utan buller och vägbrus.',
+    title: intl.formatMessage(messages.path),
   },
 ];
 

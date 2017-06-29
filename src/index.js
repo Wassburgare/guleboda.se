@@ -19,11 +19,13 @@ const language = (navigator.languages && navigator.languages[0]) ||
   navigator.systemLanguage;
 
 const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
-const messages = localeMessages[language] || localeMessages[languageWithoutRegionCode] || localeMessages.en;
+const messages = localeMessages[language] ||
+  localeMessages[languageWithoutRegionCode] ||
+  localeMessages.en;
 
 ReactDOM.render(
-  <IntlProvider 
-    locale={language} 
+  <IntlProvider
+    locale={languageWithoutRegionCode}
     messages={messages}
     defaultLocale={'en'}
   >
