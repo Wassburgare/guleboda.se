@@ -5,5 +5,14 @@
   "Find.heading": "Hitta hit",
   "Header.main": "Sommarstuga med sjötomt",
   "Header.sub": "Hyr ett sommarhus i äkta Smålandsidyll, bara 50 meter från sjön",
-  "Todo.heading": "Vad finns att göra?"
+  "Todo.glasriket.heading": "Glasriket",
+  "Todo.glasriket.href": "https://www.glasriket.se/sv/glaset/glasbruken",
+  "Todo.glasriket.linkText": "www.glasriket.se/sv/glaset/glasbruken",
+  "Todo.heading": "Vad finns att göra?",
+  "Todo.korro.href": "http://www.korro.se/",
+  "Todo.korro.linkText": "www.korro.se",
+  "Todo.kosta.href": "http://www.kostaoutlet.se",
+  "Todo.kosta.linkText": "www.kostaoutlet.se",
+  "Todo.utvandrarleden.href": "http://www.utvandrarleden.se/sv-SE",
+  "Todo.utvandrarleden.linkText": "www.utvandrarleden.se/sv-SE"
 }
