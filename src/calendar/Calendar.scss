@@ -59,12 +59,14 @@ $hovered-date-not-in-month-text-color: #bbff99;
     }
 
     span {
+      text-transform: capitalize;
       display: inline-block;
       width: 50%;
     }
   }
 
   .weekdays {
+    text-transform: capitalize;
     font-weight: bold;
     font-size: 18px;
 

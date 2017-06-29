@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import 'moment/locale/sv';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import { FormattedDate } from 'react-intl';
 import WeekRow from './WeekRow';
 import previousIcon from './ic_navigate_before_black_24px.svg';
 import nextIcon from './ic_navigate_next_black_24px.svg';
 import './Calendar.css';
 
 const mod = (n, m) => ((n % m) + m) % m;
-
-moment.locale();
 
 class Calendar extends Component {
   constructor(props) {
@@ -103,10 +101,22 @@ class Calendar extends Component {
   };
 
   getWeekdays = () => {
-    const weekdays = moment.weekdaysShort();
-    weekdays.push(weekdays.shift());
+    let weekStart = moment(moment().startOf('isoweek'));
+    const weekdays = [];
 
-    return weekdays.map(day => <li key={day}>{day}</li>);
+    for (let i = 0; i < 7; i += 1) {
+      weekdays.push(
+        <li key={i}>
+          <FormattedDate
+            value={weekStart.toDate()}
+            weekday={'short'}
+          />
+        </li>,
+      );
+      weekStart = weekStart.add(1, 'days');
+    }
+
+    return weekdays;
   }
 
   isBooked = (year, week) =>
@@ -135,7 +145,13 @@ class Calendar extends Component {
             tabIndex="0"
             onClick={this.previousMonth}
           />
-          <span>{this.state.date.format('MMMM Y')}</span>
+          <span>
+            <FormattedDate
+              value={this.state.date.toDate()}
+              month={'long'}
+              year={'numeric'}
+            />
+          </span>
           <input
             type="image"
             src={nextIcon}
