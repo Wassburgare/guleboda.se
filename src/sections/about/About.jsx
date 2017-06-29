@@ -3,7 +3,7 @@ import Lorem from 'react-lorem-component';
 import { PhotoSwipeGallery } from 'react-photoswipe';
 import 'react-photoswipe/lib/photoswipe.css';
 
-import { FormattedMessage, injectIntl } from 'react-intl';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 
 import imageItems from './ImageLoader';
 import './About.css';
@@ -50,5 +50,9 @@ class About extends Component {
     );
   }
 }
+
+About.propTypes = {
+  intl: intlShape.isRequired,
+};
 
 export default injectIntl(About);

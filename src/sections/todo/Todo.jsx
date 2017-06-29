@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Lorem from 'react-lorem-component';
-import { FormattedMessage, injectIntl, defineMessages } from 'react-intl';
+import { FormattedMessage, injectIntl, defineMessages, intlShape } from 'react-intl';
 import './Todo.css';
 
 const messages = defineMessages({
@@ -109,5 +109,9 @@ class Todo extends Component {
     );
   }
 }
+
+Todo.propTypes = {
+  intl: intlShape.isRequired,
+};
 
 export default injectIntl(Todo);
