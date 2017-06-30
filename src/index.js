@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
 import { IntlProvider, addLocaleData } from 'react-intl';
 import sv from 'react-intl/locale-data/sv';
 import en from 'react-intl/locale-data/en';
 import localeMessages from './translations/locales/localeMessages';
+
+import store from './store';
 
 import './index.css';
 import App from './App';
@@ -29,7 +32,9 @@ ReactDOM.render(
     messages={messages}
     defaultLocale={'en'}
   >
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </IntlProvider>,
   document.getElementById('root'),
 );

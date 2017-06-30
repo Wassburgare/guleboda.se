@@ -5,19 +5,8 @@ import About from './sections/about/About';
 import Find from './sections/find/Find';
 import Todo from './sections/todo/Todo';
 import Book from './sections/book/Book';
-import DbConnection from './db-connection/DbConnection';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-
-    DbConnection.getBookings((bookings) => {
-      this.setState({ bookings });
-    });
-  }
-
   render() {
     return (
       <div className="App">
@@ -26,7 +15,7 @@ class App extends Component {
           <About />
           <Find />
           <Todo />
-          <Book bookings={this.state.bookings} />
+          <Book />
         </div>
       </div>
     );

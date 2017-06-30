@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import moment from 'moment';
+import { connect } from 'react-redux';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { FormattedDate } from 'react-intl';
+
+import moment from 'moment';
+import 'moment/locale/sv';
+
 import WeekRow from './WeekRow';
 import previousIcon from './ic_navigate_before_black_24px.svg';
 import nextIcon from './ic_navigate_next_black_24px.svg';
@@ -186,4 +190,6 @@ Calendar.propTypes = {
   canBook: PropTypes.bool,
 };
 
-export default Calendar;
+const mapStateToProps = state => state.bookings;
+
+export default connect(mapStateToProps)(Calendar);
