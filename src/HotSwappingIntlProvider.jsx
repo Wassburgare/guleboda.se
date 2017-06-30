@@ -12,16 +12,19 @@ import { changeLocale } from './actions/localeActions';
 
 addLocaleData([...sv, ...en]);
 
-let language = (navigator.languages && navigator.languages[0]) ||
-  navigator.language ||
-  navigator.userLanguage ||
-  navigator.browserLanguage ||
-  navigator.systemLanguage;
-language = language.toLowerCase().split(/[_-]+/)[0];
+const getLocale = () => {
+  const language = (navigator.languages && navigator.languages[0]) ||
+    navigator.language ||
+    navigator.userLanguage ||
+    navigator.browserLanguage ||
+    navigator.systemLanguage;
+
+  return language.toLowerCase().split(/[_-]+/)[0];
+}
 
 class HotSwappingIntlProvider extends Component {
   componentWillMount() {
-    this.props.changeLocale(language);
+    this.props.changeLocale(getLocale());
   }
 
   render() {
