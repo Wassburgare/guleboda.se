@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Lorem from 'react-lorem-component';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, injectIntl } from 'react-intl';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -40,4 +40,6 @@ Book.propTypes = {
 
 const mapDispatchToProps = dispatch => bindActionCreators({ fetchBookings }, dispatch);
 
-export default connect(null, mapDispatchToProps)(Book);
+export default injectIntl(
+  connect(null, mapDispatchToProps)(Book),
+);

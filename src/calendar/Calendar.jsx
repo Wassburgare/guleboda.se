@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { FormattedDate } from 'react-intl';
+import { FormattedDate, injectIntl } from 'react-intl';
 
 import moment from 'moment';
 import 'moment/locale/sv';
@@ -192,4 +192,6 @@ Calendar.propTypes = {
 
 const mapStateToProps = state => state.bookings;
 
-export default connect(mapStateToProps)(Calendar);
+export default injectIntl(
+  connect(mapStateToProps)(Calendar),
+);
