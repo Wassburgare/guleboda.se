@@ -190,7 +190,9 @@ Calendar.propTypes = {
   canBook: PropTypes.bool,
 };
 
-const mapStateToProps = state => state.bookings;
+const mapStateToProps = state => ({
+  bookings: state.bookings.list,
+});
 
 export default injectIntl(
   connect(mapStateToProps)(Calendar),

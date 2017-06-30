@@ -52,7 +52,9 @@ Header.propTypes = {
   changeLocale: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({ language: state.locale.language });
+const mapStateToProps = state => ({
+  language: state.locale.language,
+});
 const mapDispatchToProps = dispatch => bindActionCreators({ changeLocale }, dispatch);
 
 export default injectIntl(

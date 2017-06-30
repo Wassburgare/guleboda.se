@@ -3,7 +3,8 @@ export default (state = {}, action) => {
     case 'FETCH_BOOKINGS':
       return { ...state };
     case 'FETCH_BOOKINGS_SUCCESS':
-      return { ...state, bookings: action.payload };
+      console.log(action);
+      return { ...state, list: action.payload };
     default:
       return state;
   }

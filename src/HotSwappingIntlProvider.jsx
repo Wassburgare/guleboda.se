@@ -54,7 +54,6 @@ HotSwappingIntlProvider.propTypes = {
 
 const mapStateToProps = state => ({
   language: state.locale.language,
-  messages: state.locale.messages,
 });
 const mapDispatchToProps = dispatch => bindActionCreators({ changeLocale }, dispatch);
 
