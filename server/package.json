@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bookshelf": "^0.10.3",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "knex": "^0.13.0",
+    "nodemon": "^1.11.0",
+    "pg": "^6.2.4"
+  }
+}
