@@ -5,7 +5,7 @@ import { AppContainer } from 'react-hot-loader';
 
 import store from './store';
 
-import './index.css';
+import './index.scss';
 import HotSwappingIntlProvider from './HotSwappingIntlProvider';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';

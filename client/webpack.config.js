@@ -35,8 +35,8 @@ module.exports = {
             include: path.join(__dirname, 'src'),
           },
           {
-            test: /\.css$/,
-            use: ['style-loader', 'css-loader'],
+            test: /\.s?css$/,
+            use: ['style-loader', 'css-loader', 'sass-loader'],
           },
           {
             exclude: [/\.js$/, /\.html$/, /\.json$/],

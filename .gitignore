@@ -6,7 +6,6 @@
 
 # production
 client/build
-client/src/**/*.css
 
 # misc
 .DS_Store

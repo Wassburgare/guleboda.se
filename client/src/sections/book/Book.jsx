@@ -6,7 +6,7 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import './Book.css';
+import './Book.scss';
 import Calendar from '../../calendar/Calendar';
 
 import { fetchBookings } from '../../actions/bookingsActions';
