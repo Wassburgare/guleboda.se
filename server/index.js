@@ -13,5 +13,5 @@ app.get('/bookings', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+  console.log(`API server running on port ${PORT}`);
 });

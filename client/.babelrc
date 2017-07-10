@@ -1,7 +1,7 @@
 {
   "presets": [
-    "es2015",
-    "react"
+    "react",
+    ["env", { "modules": false }]
   ],
   "plugins": [
     [
@@ -9,6 +9,8 @@
         "messagesDir": "./src/translations"
       }
     ],
-    "transform-class-properties"
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "react-hot-loader/babel"
   ]
 }

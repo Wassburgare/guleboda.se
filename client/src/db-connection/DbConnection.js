@@ -1,9 +1,7 @@
 class DbConnection {
   static getBookings(callback = () => {}) {
     fetch('/bookings')
-      .then((response) => {
-        return response.json();
-      })
+      .then(response => response.json())
       .then(callback);
   }
 }
