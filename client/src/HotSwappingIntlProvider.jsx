@@ -12,15 +12,25 @@ import { changeLocale } from './actions/localeActions';
 
 addLocaleData([...sv, ...en]);
 
-const getLocale = () => {
-  const language = (navigator.languages && navigator.languages[0]) ||
-    navigator.language ||
-    navigator.userLanguage ||
-    navigator.browserLanguage ||
-    navigator.systemLanguage;
+const getAcceptLanguages = () => {
+  const acceptLanguages = JSON.parse(ACCEPT_LANGUAGE);
+  return acceptLanguages.map(entry => `${entry.code}${entry.region ? `-${entry.region}` : ''}`);
+};
 
-  return language.toLowerCase().split(/[_-]+/)[0];
-}
+const getLocale = () => {
+  const languages = [
+    ...getAcceptLanguages(),
+    ...navigator.languages,
+    navigator.language,
+    navigator.userLanguage,
+    navigator.browserLanguage,
+    navigator.systemLanguage,
+  ];
+
+  const language = languages.find(lang => lang === 'en' || localeMessages[lang]);
+
+  return language;
+};
 
 class HotSwappingIntlProvider extends Component {
   componentWillMount() {

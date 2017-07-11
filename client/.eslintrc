@@ -6,5 +6,8 @@
   },
   "ecmaFeatures": {
     "experimentalObjectRestSpread": true
+  },
+  "globals":{
+    "ACCEPT_LANGUAGE": false
   }
 }
