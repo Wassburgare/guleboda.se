@@ -15,9 +15,7 @@
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "trans:extract": "babel \"./src/**/*.jsx\"",
-    "trans:manage": "node scripts/translationRunner.js",
-    "trans": "npm run trans:extract && npm run trans:manage",
+    "trans": "node scripts/translationRunner.js",
     "watch-trans": "nodemon -e jsx --exec \"npm run trans\""
   },
   "dependencies": {
