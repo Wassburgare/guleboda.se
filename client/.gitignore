@@ -1,0 +1,9 @@
+# testing
+/coverage
+
+# production
+/build
+/src/**/*.css
+
+/src/translations/*
+!/src/translations/locales

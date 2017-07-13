@@ -1,0 +1,14 @@
+{
+  "name": "guleboda-server",
+  "description": "Server app for guleboda.se",
+  "private": true,
+  "license": "UNLICENSED",
+  "author": {
+    "name" : "Daniel Wassbjer",
+    "email" : "daniel.wassbjer@gmail.com"
+  },
+  "scripts": {
+    "start": "echo \"Error: no start specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
