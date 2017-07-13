@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Lorem from 'react-lorem-component';
 import { PhotoSwipeGallery } from 'react-photoswipe';
 import 'react-photoswipe/lib/photoswipe.css';
+
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+
 import imageItems from './ImageLoader';
 import './About.css';
 
@@ -21,15 +24,25 @@ class About extends Component {
   render() {
     return (
       <div className="about">
-        <h2>Om stugan</h2>
+        <h2>
+          <FormattedMessage
+            id={'About.heading'}
+            defaultMessage={'About the house'}
+          />
+        </h2>
         <hr />
         <div className="summary-box">
-          <h2>Snabbfakta</h2>
+          <h2>
+            <FormattedMessage
+              id={'About.quickFacts'}
+              defaultMessage={'Quick facts'}
+            />
+          </h2>
           <Lorem paragraphLowerBound={1} paragraphUpperBound={1} sentenceUpperBound={7} />
         </div>
         <Lorem />
         <PhotoSwipeGallery
-          items={imageItems}
+          items={imageItems(this.props.intl)}
           options={options}
           thumbnailContent={getThumbnailContent}
         />
@@ -38,4 +51,8 @@ class About extends Component {
   }
 }
 
-export default About;
+About.propTypes = {
+  intl: intlShape.isRequired,
+};
+
+export default injectIntl(About);

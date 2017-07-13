@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import Lorem from 'react-lorem-component';
+import { FormattedMessage } from 'react-intl';
 import './Find.css';
 
 class Find extends Component {
   render() {
     return (
       <div className="find">
-        <h2>Hitta hit</h2>
+        <h2>
+          <FormattedMessage
+            id={'Find.heading'}
+            defaultMessage={'Get here'}
+          />
+        </h2>
         <hr />
         <Lorem count="1" />
         <div className="eniro-map">

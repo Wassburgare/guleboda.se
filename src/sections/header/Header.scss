@@ -1,6 +1,8 @@
 $text-color: white;
 
 .header {
+  position: relative;
+
   width: 100%;
   height: 350px;
 
@@ -23,5 +25,24 @@ $text-color: white;
 
     margin: auto;
     width: 500px;
+  }
+
+  .language-picker {
+    width: 100%;
+    height: 5%;
+
+    position: absolute;
+    text-align: right;
+    right: 0;
+    padding: .5% 1% 0 0;
+
+    > input {
+      height: 100%;
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: .5%;
+      }
+    }
   }
 }

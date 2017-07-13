@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Lorem from 'react-lorem-component';
 import PropTypes from 'prop-types';
+import { FormattedMessage, injectIntl } from 'react-intl';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -18,7 +19,12 @@ class Book extends Component {
   render() {
     return (
       <div className="book">
-        <h2>Boka</h2>
+        <h2>
+          <FormattedMessage
+            id={'Book.heading'}
+            defaultMessage={'Book'}
+          />
+        </h2>
         <hr />
         <Lorem count="2" />
         <Calendar />
@@ -34,4 +40,6 @@ Book.propTypes = {
 
 const mapDispatchToProps = dispatch => bindActionCreators({ fetchBookings }, dispatch);
 
-export default connect(null, mapDispatchToProps)(Book);
+export default injectIntl(
+  connect(null, mapDispatchToProps)(Book),
+);
