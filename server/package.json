@@ -4,11 +4,20 @@
   "private": true,
   "license": "UNLICENSED",
   "author": {
-    "name" : "Daniel Wassbjer",
-    "email" : "daniel.wassbjer@gmail.com"
+    "name": "Daniel Wassbjer",
+    "email": "daniel.wassbjer@gmail.com"
   },
   "scripts": {
-    "start": "echo \"Error: no start specified\" && exit 1",
+    "start": "nodemon --watch .",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bookshelf": "^0.10.3",
+    "express": "^4.15.3",
+    "knex": "^0.13.0",
+    "pg": "^6.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
