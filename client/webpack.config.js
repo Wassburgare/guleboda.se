@@ -60,8 +60,9 @@ module.exports = {
     port: 3000,
     hot: true,
     proxy: {
-      '**': 'http://localhost:3001',
+      '/bookings': 'http://localhost:3001',
     },
+    contentBase: path.resolve(__dirname, 'public/'),
     stats: {
       colors: true,
       hash: false,
