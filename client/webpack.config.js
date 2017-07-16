@@ -59,6 +59,9 @@ module.exports = {
   devServer: {
     port: 3000,
     hot: true,
+    proxy: {
+      '**': 'http://localhost:3001',
+    },
     stats: {
       colors: true,
       hash: false,
