@@ -10,7 +10,7 @@ import 'moment/locale/sv';
 import WeekRow from './WeekRow';
 import previousIcon from './ic_navigate_before_black_24px.svg';
 import nextIcon from './ic_navigate_next_black_24px.svg';
-import './Calendar.css';
+import './Calendar.scss';
 
 const mod = (n, m) => ((n % m) + m) % m;
 

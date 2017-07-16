@@ -6,7 +6,7 @@ import 'react-photoswipe/lib/photoswipe.css';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 
 import imageItems from './ImageLoader';
-import './About.css';
+import './About.scss';
 
 const options = {
   shareEl: false,

@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
 import { changeLocale } from '../../actions/localeActions';
-import './Header.css';
+import './Header.scss';
 
 class Header extends Component {
   render() {
