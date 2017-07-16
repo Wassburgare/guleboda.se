@@ -6,8 +6,7 @@ const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 module.exports = {
   entry: [
     'whatwg-fetch',
-    // 'react-hot-loader/patch',
-    // 'webpack-hot-middleware/client?quiet=true',
+    'react-hot-loader/patch',
     './src/index.js',
   ],
   output: {
