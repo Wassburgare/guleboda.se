@@ -19,7 +19,7 @@ const render = (Component) => {
         </AppContainer>
       </HotSwappingIntlProvider>
     </Provider>,
-    document.getElementById('root')
+    document.getElementById('root'),
   );
 };
 
