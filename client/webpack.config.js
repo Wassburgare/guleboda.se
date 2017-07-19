@@ -4,13 +4,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 
 module.exports = {
-  entry: [
-    'whatwg-fetch',
-    'react-hot-loader/patch',
-    './src/app/main/index.js',
-  ],
+  entry: {
+    index: [
+      'whatwg-fetch',
+      'react-hot-loader/patch',
+      './src/app/main/index.js',
+    ],
+    admin: [
+      './src/app/admin/index.js',
+    ],
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'build'),
   },
   resolve: {
@@ -57,7 +62,14 @@ module.exports = {
     new InterpolateHtmlPlugin({ PUBLIC_URL: '' }),
     new HtmlWebpackPlugin({
       inject: true,
+      chunks: ['index'],
       template: path.resolve(__dirname, 'public', 'index.html'),
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      chunks: ['admin'],
+      template: path.resolve(__dirname, 'public', 'index.html'),
+      filename: 'admin/index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
