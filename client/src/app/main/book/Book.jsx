@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import Calendar from 'src/calendar/Calendar';
-import { fetchBookings } from 'src/bookings/bookingsActions';
+import { fetchBookings } from 'src/bookings/actions';
 
 import './Book.scss';
 

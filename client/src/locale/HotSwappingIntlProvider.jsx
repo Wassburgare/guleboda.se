@@ -8,7 +8,7 @@ import sv from 'react-intl/locale-data/sv';
 import en from 'react-intl/locale-data/en';
 
 import translatedMessages from './translations/translatedMessages';
-import { changeLocale } from './localeActions';
+import { changeLocale } from './actions';
 
 addLocaleData([...sv, ...en]);
 

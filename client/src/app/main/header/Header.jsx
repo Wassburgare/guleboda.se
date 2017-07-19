@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
-import { changeLocale } from 'src/locale/localeActions';
+import { changeLocale } from 'src/locale/actions';
 
 import './Header.scss';
 
