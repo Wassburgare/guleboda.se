@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Lorem from 'react-lorem-component';
 import { FormattedMessage } from 'react-intl';
+
 import './Find.scss';
 
 class Find extends Component {

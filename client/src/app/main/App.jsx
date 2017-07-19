@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './App.scss';
-import Header from './sections/header/Header';
-import About from './sections/about/About';
-import Find from './sections/find/Find';
-import Todo from './sections/todo/Todo';
-import Book from './sections/book/Book';
+import 'MainApp/App.scss';
+import Header from 'MainApp/header/Header';
+import About from 'MainApp/about/About';
+import Find from 'MainApp/find/Find';
+import Todo from 'MainApp/todo/Todo';
+import Book from 'MainApp/book/Book';
 
 class App extends Component {
   render() {

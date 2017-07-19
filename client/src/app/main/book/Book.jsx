@@ -6,10 +6,10 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import './Book.scss';
-import Calendar from '../../calendar/Calendar';
+import Calendar from 'src/calendar/Calendar';
+import { fetchBookings } from 'src/bookings/bookingsActions';
 
-import { fetchBookings } from '../../actions/bookingsActions';
+import './Book.scss';
 
 class Book extends Component {
   componentWillMount() {

@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
-import { changeLocale } from '../../actions/localeActions';
+import { changeLocale } from 'src/translations/localeActions';
+
 import './Header.scss';
 
 class Header extends Component {

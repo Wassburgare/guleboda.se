@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Lorem from 'react-lorem-component';
 import { FormattedMessage, injectIntl, defineMessages, intlShape } from 'react-intl';
+
 import './Todo.scss';
 
 const messages = defineMessages({

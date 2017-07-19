@@ -7,7 +7,7 @@ module.exports = {
   entry: [
     'whatwg-fetch',
     'react-hot-loader/patch',
-    './src/index.js',
+    './src/app/main/index.js',
   ],
   output: {
     filename: 'bundle.js',
@@ -15,6 +15,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      src: path.resolve(__dirname, 'src'),
+      MainApp: path.resolve(__dirname, 'src/app/main'),
+      AdminApp: path.resolve(__dirname, 'src/app/admin'),
+    },
   },
   module: {
     rules: [

@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 
-import store from './store';
+import HotSwappingIntlProvider from 'src/translations/HotSwappingIntlProvider';
+import registerServiceWorker from 'src/registerServiceWorker';
 
 import './index.scss';
-import HotSwappingIntlProvider from './HotSwappingIntlProvider';
+import store from './store';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 
 const render = (Component) => {
   ReactDOM.render(
@@ -26,7 +26,7 @@ const render = (Component) => {
 render(App);
 
 if (module.hot) {
-  module.hot.accept('./App', () => { render(App); });
+  module.hot.accept('MainApp/App', () => { render(App); });
 }
 
 registerServiceWorker();
