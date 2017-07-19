@@ -6,7 +6,7 @@
   "plugins": [
     [
       "react-intl", {
-        "messagesDir": "./src/translations"
+        "messagesDir": "./src/locale/messages"
       }
     ],
     "transform-class-properties",
