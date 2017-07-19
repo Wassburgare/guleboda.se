@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 
-import HotSwappingIntlProvider from 'src/translations/HotSwappingIntlProvider';
+import HotSwappingIntlProvider from 'src/locale/HotSwappingIntlProvider';
 import registerServiceWorker from 'src/registerServiceWorker';
 
 import './index.scss';

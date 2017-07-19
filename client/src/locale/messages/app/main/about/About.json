@@ -1,0 +1,10 @@
+[
+  {
+    "id": "About.heading",
+    "defaultMessage": "About the house"
+  },
+  {
+    "id": "About.quickFacts",
+    "defaultMessage": "Quick facts"
+  }
+]

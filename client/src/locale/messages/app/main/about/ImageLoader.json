@@ -1,0 +1,14 @@
+[
+  {
+    "id": "About.image.cows",
+    "defaultMessage": "Live in an idyllic farm environment."
+  },
+  {
+    "id": "About.image.pigs",
+    "defaultMessage": "Happy pigs that are allowed to root outside the whole summer!"
+  },
+  {
+    "id": "About.image.path",
+    "defaultMessage": "Go explore along dirt roads and crooked paths. Listen to the nature without any noise."
+  }
+]

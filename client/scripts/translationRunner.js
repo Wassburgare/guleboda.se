@@ -1,8 +1,8 @@
 const manageTranslations = require('react-intl-translations-manager').default;
 
 manageTranslations({
-  messagesDirectory: 'src/translations/src/',
-  translationsDirectory: 'src/translations/locales/',
+  messagesDirectory: 'src/locale/messages/',
+  translationsDirectory: 'src/locale/translations/',
   jsonOptions: { trailingNewline: true },
   languages: ['sv'],
 });

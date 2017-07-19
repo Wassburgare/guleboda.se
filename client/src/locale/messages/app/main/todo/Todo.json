@@ -1,0 +1,42 @@
+[
+  {
+    "id": "Todo.korro.href",
+    "defaultMessage": "http://www.korro.se"
+  },
+  {
+    "id": "Todo.glasriket.href",
+    "defaultMessage": "https://www.glasriket.se/en/The-Glassworks"
+  },
+  {
+    "id": "Todo.kosta.href",
+    "defaultMessage": "http://www.kostaoutlet.se"
+  },
+  {
+    "id": "Todo.utvandrarleden.href",
+    "defaultMessage": "http://www.utvandrarleden.se/en-GB"
+  },
+  {
+    "id": "Todo.heading",
+    "defaultMessage": "Things to do"
+  },
+  {
+    "id": "Todo.korro.linkText",
+    "defaultMessage": "www.korro.se"
+  },
+  {
+    "id": "Todo.glasriket.heading",
+    "defaultMessage": "Kingdom of Crystal"
+  },
+  {
+    "id": "Todo.glasriket.linkText",
+    "defaultMessage": "www.glasriket.se/en/The-Glassworks"
+  },
+  {
+    "id": "Todo.kosta.linkText",
+    "defaultMessage": "www.kostaoutlet.se"
+  },
+  {
+    "id": "Todo.utvandrarleden.linkText",
+    "defaultMessage": "www.utvandrarleden.se/en-GB"
+  }
+]
