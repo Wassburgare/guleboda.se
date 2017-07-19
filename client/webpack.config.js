@@ -8,10 +8,10 @@ module.exports = {
     index: [
       'whatwg-fetch',
       'react-hot-loader/patch',
-      './src/app/main/index.js',
+      './src/app/main/index.jsx',
     ],
     admin: [
-      './src/app/admin/index.js',
+      './src/app/admin/index.jsx',
     ],
   },
   output: {
