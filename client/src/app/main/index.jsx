@@ -26,7 +26,7 @@ const render = (Component) => {
 render(App);
 
 if (module.hot) {
-  module.hot.accept('MainApp/App', () => { render(App); });
+  module.hot.accept('./App', () => { render(App); });
 }
 
 registerServiceWorker();
