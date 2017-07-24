@@ -1,12 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { AppContainer } from 'react-hot-loader';
 
+import HotSwappingIntlProvider from 'src/locale/HotSwappingIntlProvider';
 import registerServiceWorker from 'src/registerServiceWorker';
 
-// TODO: Hot reloading
-ReactDOM.render(
-  <h1>Page under construction! 😘</h1>,
-  document.getElementById('root'),
-);
+// import './index.scss';
+// import store from './store';
+import App from './App';
+
+const render = (Component) => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.getElementById('root'),
+  );
+};
+
+render(App);
+
+if (module.hot) {
+  module.hot.accept('AdminApp/App', () => { render(App); });
+}
 
 registerServiceWorker();

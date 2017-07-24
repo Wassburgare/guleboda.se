@@ -11,6 +11,8 @@ module.exports = {
       './src/app/main/index.jsx',
     ],
     admin: [
+      'whatwg-fetch',
+      'react-hot-loader/patch',
       './src/app/admin/index.jsx',
     ],
   },
@@ -78,6 +80,8 @@ module.exports = {
     hot: true,
     proxy: {
       '/bookings': 'http://localhost:3001',
+      '/login': 'http://localhost:3001',
+      '/auth': 'http://localhost:3001',
     },
     contentBase: path.resolve(__dirname, 'public/'),
     stats: {

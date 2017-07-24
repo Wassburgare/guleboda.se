@@ -1,5 +1,62 @@
 const bookshelf = require('./');
+const bcrypt = require('bcrypt');
+const uuidv4 = require('uuid/v4');
+const moment = require('moment');
 
-exports.Booking = bookshelf.Model.extend({
+const Booking = bookshelf.Model.extend({
   tableName: 'bookings',
 });
+
+const Session = bookshelf.Model.extend({
+  tableName: 'sessions',
+  hasTimestamps: true,
+}, {
+  create: (userId) => {
+    return Session.forge({
+      user_id: userId,
+      token: uuidv4(),
+      expires: moment().add(2, 'month').toDate(),
+    }).save().tap((session) => {
+      console.log('Session saved:', session.get('user_id'), session.get('token'));
+    });
+  },
+
+  auth: (token) => {
+    return new Session({
+      token,
+    }).where('expires', '>=', new Date()).fetch({ require: true }).tap((session) => {
+      console.log('Session found:', session.get('token'), session.get('expires'));
+    });
+  },
+});
+
+const User = bookshelf.Model.extend({
+  tableName: 'users',
+  hasTimestamps: true,
+}, {
+  create: (email, password) => {
+    return bcrypt.hash(password, 10).then((hash) => {
+      return User.forge({
+        email,
+        hash,
+      }).save();
+    }).then((user) => {
+      console.log('User saved:', user.get('email'));
+      return Promise.resolve();
+    });
+  },
+
+  login: (email, password) => {
+    return new User({ email: email.toLowerCase().trim() }).fetch({ require: true }).tap((user) => {
+      return bcrypt.compare(password, user.get('hash')).then((res) => {
+        if (!res) {
+          throw new Error('Invalid password');
+        }
+      });
+    });
+  },
+});
+
+exports.Booking = Booking;
+exports.User = User;
+exports.Session = Session;
