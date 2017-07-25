@@ -7,14 +7,18 @@ import HotSwappingIntlProvider from 'src/locale/HotSwappingIntlProvider';
 import registerServiceWorker from 'src/registerServiceWorker';
 
 import './index.scss';
-// import store from './store';
+import store from './store';
 import App from './App';
 
 const render = (Component) => {
   ReactDOM.render(
-    <AppContainer>
-      <Component />
-    </AppContainer>,
+    <Provider store={store}>
+      <HotSwappingIntlProvider>
+        <AppContainer>
+          <Component />
+        </AppContainer>
+      </HotSwappingIntlProvider>
+    </Provider>,
     document.getElementById('root'),
   );
 };
