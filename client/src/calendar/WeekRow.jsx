@@ -12,7 +12,7 @@ class WeekRow extends Component {
   }
 
   onClick = () => {
-    this.props.onClick(this.props.weekNumber);
+    this.props.onClick(this.props.weekNumber, this.props.year);
   }
 
   render = () =>
@@ -52,6 +52,7 @@ WeekRow.defaultProps = {
 WeekRow.propTypes = {
   index: PropTypes.number.isRequired,
   weekNumber: PropTypes.number.isRequired,
+  year: PropTypes.number.isRequired,
   hoverIndex: PropTypes.number,
 
   items: PropTypes.arrayOf(

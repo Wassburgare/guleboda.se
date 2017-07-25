@@ -32,9 +32,9 @@ class Calendar extends Component {
     this.setState({ hoverIndex: null });
   }
 
-  onWeekClick = (week) => {
+  onWeekClick = (week, year) => {
     if (this.props.onWeekClick) {
-      this.props.onWeekClick(week);
+      this.props.onWeekClick(week, year);
     }
   }
 
@@ -90,6 +90,7 @@ class Calendar extends Component {
           isBooked={this.isBooked(year, week)}
           isNextBooked={this.isBooked(year, week + 1)}
           weekNumber={week += 1}
+          year={year}
           items={listItems.splice(0, 7)}
           index={index += 1}
           onMouseEnter={this.onMouseEnter}
