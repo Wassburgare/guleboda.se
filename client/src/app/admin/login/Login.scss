@@ -1,0 +1,89 @@
+$background-color: white;
+$input-field-background-color: #e6e6e6;
+$submit-button-background-color: #51abef;
+$submit-button-background-color-hover: #5cb0f0;
+$submit-button-background-color-active: #44a4ee;
+$submit-button-text-color: white;
+$input-outline-color: #168ee9;
+
+.login {
+  background-color: $background-color;
+
+  .login-box {
+    max-width: 600px;
+    height: 100vh;
+    margin: auto;
+
+    display: table;
+
+    form {
+      display: table-cell;
+      vertical-align: middle;
+
+      * {
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      label {
+        display: inline-block;
+        font-size: 1.4em;
+        margin-right: .5em;
+        vertical-align: middle;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      input {
+        margin: .5em 0 .5em 0;
+        border: 0;
+
+        &:focus {
+          box-shadow: 0 0 2pt 2pt $input-outline-color;
+          outline: 0;
+        }
+      }
+
+      input:not([type='checkbox']) {
+        box-sizing: border-box;
+        width: 100%;
+        padding: .4em .8em .4em .8em;
+        font-size: 1.8em;
+      }
+
+      input[type='checkbox'] {
+        display: inline-block;
+        width: 1.8em;
+        height: 1.8em;
+        vertical-align: middle;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      input[type='text'], input[type='password'] {
+        background-color: $input-field-background-color;
+      }
+
+      input[type='submit'] {
+        background-color: $submit-button-background-color;
+        color: $submit-button-text-color;
+
+        &:hover {
+          background-color: $submit-button-background-color-hover;
+          cursor: pointer;
+        }
+
+        &:active {
+          background-color: $submit-button-background-color-active;
+        }
+      }
+
+      input[type='text'], input[type='password'], input[type='submit'] {
+        border-radius: .6em;
+      }
+    }
+  }
+}

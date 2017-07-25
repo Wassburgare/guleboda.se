@@ -3,7 +3,25 @@ import PropTypes from 'prop-types';
 
 import DbConnection from 'src/db-connection/DbConnection';
 
+import './Login.scss';
+
 class Login extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      rememberMe: true,
+    };
+  }
+
+  onLogin = (response) => {
+    if (!response.success) {
+      // TODO: Print some error message
+    } else {
+      this.props.onLogin();
+    }
+  }
+
   handleEmailChange = (event) => {
     this.setState({ email: event.target.value });
   }
@@ -14,14 +32,6 @@ class Login extends Component {
 
   handleCheckboxChange = (event) => {
     this.setState({ rememberMe: event.target.checked ? true : undefined });
-  }
-
-  onLogin = (response) => {
-    if (!response.success) {
-      // TODO: Print some error message
-    } else {
-      this.props.onLogin();
-    }
   }
 
   handleSubmit = (e) => {
@@ -35,14 +45,21 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Page under construction! 😘</h1>
-        <form onSubmit={this.handleSubmit}>
-          Email: <input type="text" onChange={this.handleEmailChange} /><br />
-          Password: <input type="password" onChange={this.handlePasswordChange} /><br />
-          Remember me: <input type="checkbox" onChange={this.handleCheckboxChange} /> <br />
-          <input type="submit" value="Sign in" />
-        </form>
+      <div className="login">
+        <div className="login-box">
+          <form onSubmit={this.handleSubmit}>
+            <input type="text" placeholder="E-postadress" onChange={this.handleEmailChange} />
+            <input type="password" placeholder="Lösenord" onChange={this.handlePasswordChange} />
+            <label htmlFor="remember-me-checkbox">Kom ihåg mig:</label>
+            <input
+              id="remember-me-checkbox"
+              type="checkbox"
+              checked={this.state.rememberMe}
+              onChange={this.handleCheckboxChange}
+            />
+            <input type="submit" value="Logga in" />
+          </form>
+        </div>
       </div>
     );
   }
