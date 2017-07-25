@@ -28,10 +28,10 @@ class App extends Component {
 
   authenticate = () => {
     DbConnection.auth((response) => {
-      if (response.success) {
-        this.setBookView();
-      } else {
+      if (!response.success) {
         this.setLoginView();
+      } else {
+        this.setBookView();
       }
     });
   }

@@ -16,13 +16,21 @@ class Login extends Component {
     this.setState({ rememberMe: event.target.checked ? true : undefined });
   }
 
+  onLogin = (response) => {
+    if (!response.success) {
+      // TODO: Print some error message
+    } else {
+      this.props.onLogin();
+    }
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
 
     DbConnection.login(this.state.email,
       this.state.password,
       this.state.rememberMe,
-      this.props.onLogin);
+      this.onLogin);
   }
 
   render() {
