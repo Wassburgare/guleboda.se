@@ -16,7 +16,22 @@ class Login extends Component {
 
   onLogin = (response) => {
     if (!response.success) {
-      // TODO: Print some error message
+      switch (response.error) {
+        case 'not_found':
+          this.setState({
+            userError: 'Fel e-postadress',
+            passwordError: undefined,
+          });
+          break;
+        case 'invalid_login':
+          this.setState({
+            userError: undefined,
+            passwordError: 'Fel lösenord',
+          });
+          break;
+        default:
+          break;
+      }
     } else {
       this.props.onLogin();
     }
@@ -48,8 +63,24 @@ class Login extends Component {
       <div className="login">
         <div className="login-box">
           <form onSubmit={this.handleSubmit}>
-            <input type="text" placeholder="E-postadress" onChange={this.handleEmailChange} />
-            <input type="password" placeholder="Lösenord" onChange={this.handlePasswordChange} />
+            <div className="error-message">
+              <span>{this.state.userError}</span>
+            </div>
+            <input
+              type="text"
+              className={this.state.userError ? 'input-error' : null}
+              placeholder="E-postadress"
+              onChange={this.handleEmailChange}
+            />
+            <div className="error-message">
+              <span>{this.state.passwordError}</span>
+            </div>
+            <input
+              type="password"
+              className={this.state.passwordError ? 'input-error' : null}
+              placeholder="Lösenord"
+              onChange={this.handlePasswordChange}
+            />
             <label htmlFor="remember-me-checkbox">Kom ihåg mig:</label>
             <input
               id="remember-me-checkbox"

@@ -1,10 +1,15 @@
 $background-color: white;
+
 $input-field-background-color: #e6e6e6;
+$input-field-background-color-error: #ffb3b3;
+$input-outline-color: #168ee9;
+
 $submit-button-background-color: #51abef;
 $submit-button-background-color-hover: #5cb0f0;
 $submit-button-background-color-active: #44a4ee;
 $submit-button-text-color: white;
-$input-outline-color: #168ee9;
+
+$error-text-color: #ff1a1a;
 
 .login {
   background-color: $background-color;
@@ -36,7 +41,6 @@ $input-outline-color: #168ee9;
       }
 
       input {
-        margin: .5em 0 .5em 0;
         border: 0;
 
         &:focus {
@@ -58,6 +62,8 @@ $input-outline-color: #168ee9;
         height: 1.8em;
         vertical-align: middle;
 
+        margin: 1.5em 0 1.5em 0;
+
         &:hover {
           cursor: pointer;
         }
@@ -65,6 +71,10 @@ $input-outline-color: #168ee9;
 
       input[type='text'], input[type='password'] {
         background-color: $input-field-background-color;
+
+        &.input-error {
+          background-color: $input-field-background-color-error;
+        }
       }
 
       input[type='submit'] {
@@ -83,6 +93,14 @@ $input-outline-color: #168ee9;
 
       input[type='text'], input[type='password'], input[type='submit'] {
         border-radius: .6em;
+      }
+
+      .error-message {
+        height: 2.5em;
+        line-height: 2.5em;
+        text-align: right;
+
+        color: $error-text-color;
       }
     }
   }
