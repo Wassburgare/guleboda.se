@@ -89,7 +89,7 @@ class Calendar extends Component {
           isPrevBooked={this.isBooked(year, week - 1)}
           isBooked={this.isBooked(year, week)}
           isNextBooked={this.isBooked(year, week + 1)}
-          weekNumber={week += 1}
+          weekNumber={week}
           year={year}
           items={listItems.splice(0, 7)}
           index={index += 1}
@@ -100,6 +100,8 @@ class Calendar extends Component {
           key={lists.length}
         />,
       );
+
+      week += 1;
     }
 
     return lists;
