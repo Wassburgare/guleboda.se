@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import emailValidator from 'email-validator';
 
 import DbConnection from 'src/db-connection/DbConnection';
 
@@ -10,6 +11,8 @@ class Login extends Component {
     super(props);
 
     this.state = {
+      email: '',
+      password: '',
       rememberMe: true,
     };
   }
@@ -52,10 +55,26 @@ class Login extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    DbConnection.login(this.state.email,
-      this.state.password,
-      this.state.rememberMe,
-      this.onLogin);
+    emailValidator.validate_async(this.state.email, (err, isValidEmail) => {
+      if (!isValidEmail) {
+        this.setState({
+          userError: 'Du måste ange en giltig e-postadress',
+          passwordError: undefined,
+        });
+        return;
+      } else if (this.state.password.length <= 0) {
+        this.setState({
+          userError: undefined,
+          passwordError: 'Du måste ange ett lösenord',
+        });
+        return;
+      }
+
+      DbConnection.login(this.state.email,
+        this.state.password,
+        this.state.rememberMe,
+        this.onLogin);
+    });
   }
 
   render() {
