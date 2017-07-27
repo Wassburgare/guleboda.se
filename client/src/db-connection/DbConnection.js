@@ -7,6 +7,18 @@ class DbConnection {
       .then(callback);
   }
 
+  static createBooking(week, year, callback = noop) {
+    // TODO: Implement
+    console.log('DbConnection', 'createBooking');
+    callback();
+  }
+
+  static deleteBooking(week, year, callback = noop) {
+    // TODO: Implement
+    console.log('DbConnection', 'deleteBooking');
+    callback();
+  }
+
   static login(email, password, rememberMe, callback = noop) {
     fetch('/login', {
       method: 'POST',
