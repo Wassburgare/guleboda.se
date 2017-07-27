@@ -7,6 +7,8 @@ const createBookingsTable = bookshelf.knex.schema.dropTableIfExists('bookings').
     table.integer('week');
     table.integer('year');
     table.unique(['week', 'year']);
+    table.boolean('active');
+    table.timestamps();
   });
 }).then(() => {
   console.log('Table "bookings" created');

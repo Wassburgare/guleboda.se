@@ -8,15 +8,37 @@ class DbConnection {
   }
 
   static createBooking(week, year, callback = noop) {
-    // TODO: Implement
-    console.log('DbConnection', 'createBooking');
-    callback();
+    fetch('/bookings', {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        week,
+        year,
+        type: 'create',
+      }),
+    }).then(
+      response => response.json(),
+    ).then(callback);
   }
 
   static deleteBooking(week, year, callback = noop) {
-    // TODO: Implement
-    console.log('DbConnection', 'deleteBooking');
-    callback();
+    fetch('/bookings', {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        week,
+        year,
+        type: 'delete',
+      }),
+    }).then(
+      response => response.json(),
+    ).then(callback);
   }
 
   static login(email, password, rememberMe, callback = noop) {

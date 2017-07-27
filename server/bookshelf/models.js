@@ -5,6 +5,35 @@ const moment = require('moment');
 
 const Booking = bookshelf.Model.extend({
   tableName: 'bookings',
+  hasTimestamps: true,
+}, {
+  create: (week, year) => {
+    return new Booking({
+      week,
+      year,
+    }).fetch({ require: true }).then((booking) => {
+      return booking.save({ active: true }, { patch: true });
+    }).tap((booking) => {
+      console.log('Booking marked as active:', booking.get('week'), booking.get('year'));
+    }).catch(Booking.NotFoundError, () => {
+      return new Booking({
+        week,
+        year,
+        active: true,
+      }).save();
+    }).tap((booking) => {
+      console.log('Booking created:', booking.get('week'), booking.get('year'));
+    });
+  },
+
+  delete: (week, year) => {
+    return Booking
+      .where({ week, year})
+      .save({ active: false }, { patch: true })
+      .tap((booking) => {
+        console.log('Booking marked as inactive:', week, year);
+      });
+  },
 });
 
 const Session = bookshelf.Model.extend({

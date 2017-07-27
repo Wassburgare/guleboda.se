@@ -4,9 +4,11 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const moment = require('moment');
 
-const Bookings = require('./bookshelf/collections').Bookings;
 const User = require('./bookshelf/models').User;
 const Session = require('./bookshelf/models').Session;
+const Booking = require('./bookshelf/models').Booking;
+
+const Bookings = require('./bookshelf/collections').Bookings;
 
 const app = express();
 
@@ -17,8 +19,32 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/bookings', (req, res) => {
-  Bookings.forge().fetch({ columns: ['week', 'year'] }).then((bookings) => {
+  Booking.where({ active: true }).fetchAll({ columns: ['week', 'year'] }).then((bookings) => {
     res.json(bookings);
+  });
+});
+
+app.post('/bookings', (req, res) => {
+  const token = req.cookies.token || '';
+
+  const week = req.body.week;
+  const year = req.body.year;
+
+  const responseBody = { success: true };
+
+  Session.auth(token).then(() => {
+    if (req.body.type === 'create') {
+      return Booking.create(week, year);
+    } else if (req.body.type === 'delete') {
+      return Booking.delete(week, year);
+    }
+  }).catch((e) => {
+    // console.log(e);
+    res.status(401);
+    responseBody.success = false;
+  }).finally(() => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(responseBody);
   });
 });
 
@@ -26,7 +52,7 @@ app.post('/login', (req, res) => {
   const email = req.body.email || '';
   const password = req.body.password || '';
 
-  responseBody = { success: true };
+  const responseBody = { success: true };
 
   User.login(email, password).tapCatch(() => {
     responseBody.error = 'invalid_login';
