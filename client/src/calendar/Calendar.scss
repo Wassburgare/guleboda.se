@@ -1,15 +1,16 @@
 $main-text-color: #262626;
 
+$date-bg-color: rgba(0, 0, 0, 0);
 $date-text-color: #262626;
 $date-not-in-month-text-color: #b5b5b5;
 
 $week-number-text-color: #5c5c5c;
 
-$booked-bg-color: #e13f3f;
+$booked-date-bg-color: #e13f3f;
 $booked-date-text-color: white;
 $booked-date-not-in-month-text-color: #ffa8a8;
 
-$hovered-bg-color: #73d349;
+$hovered-date-bg-color: #73d349;
 $hovered-date-text-color: white;
 $hovered-date-not-in-month-text-color: #bbff99;
 
@@ -18,35 +19,32 @@ $hovered-date-not-in-month-text-color: #bbff99;
 }
 
 @mixin dateGradient($bg-left, $bg-right, $text-left, $text-right, $not-in-month-text-left, $not-in-month-text-right) {
-  @include bgGradient($bg-left, $bg-right);
+  li:last-child {
+    @include bgGradient($bg-left, $bg-right);
 
-  span {
-    @include bgGradient($text-left, $text-right);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+    span {
+      @include bgGradient($text-left, $text-right);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &.not-in-month span {
+      @include bgGradient($not-in-month-text-left, $not-in-month-text-right);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
   }
-
-  &.not-in-month span {
-    @include bgGradient($not-in-month-text-left, $not-in-month-text-right);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
-@mixin removeTextGradient() {
-  background: none;
-  -webkit-background-clip: unset;
-  -webkit-text-fill-color: unset;
 }
 
 .calendar {
   font-family: 'Open Sans', sans-serif;
   color: $main-text-color;
   user-select: none;
+  cursor: default;
 
   .month-selector {
     font-weight: bold;
@@ -90,7 +88,7 @@ $hovered-date-not-in-month-text-color: #bbff99;
       padding: 0 $padding * 1%;
 
       display: inline-block;
-      position: relative;
+      // position: relative;
 
       text-align: center;
 
@@ -102,9 +100,9 @@ $hovered-date-not-in-month-text-color: #bbff99;
       }
 
       span {
-        display: inline-block;
-        width: 2em;
-        line-height: 2em;
+        width: 1.5em;
+        line-height: 1.5em;
+        vertical-align: middle;
       }
 
       &:first-child {
@@ -115,17 +113,18 @@ $hovered-date-not-in-month-text-color: #bbff99;
         padding-left: 0;
       }
 
-      &:last-child {
-        padding: 0;
-      }
-
       &:nth-last-child(2) {
         padding-right: $padding * 2%;
+      }
+
+      &:last-child {
+        padding: 0;
       }
     }
   }
 
   // Styling
+
   &.bookable {
     .week-row {
       cursor: pointer;
@@ -144,74 +143,51 @@ $hovered-date-not-in-month-text-color: #bbff99;
     &.hovered {
       li {
         &:not(:first-child) {
-          background: $hovered-bg-color;
+          background-color: $hovered-date-bg-color;
           color: $hovered-date-text-color;
         }
 
         &.not-in-month {
           color: $hovered-date-not-in-month-text-color;
         }
-
-        &:last-child {
-          @include dateGradient($hovered-bg-color, rgba(0,0,0,0), $hovered-date-text-color, $date-text-color, $hovered-date-not-in-month-text-color, $date-not-in-month-text-color);
-        }
-      }
-    }
-
-    &.next-hovered {
-      li:last-child {
-        @include dateGradient(rgba(0,0,0,0), $hovered-bg-color, $date-text-color, $hovered-date-text-color, $date-not-in-month-text-color, $hovered-date-not-in-month-text-color);
       }
     }
 
     &.booked {
       li {
         &:not(:first-child) {
-          background: $booked-bg-color;
+          background-color: $booked-date-bg-color;
           color: $booked-date-text-color;
         }
 
         &.not-in-month {
           color: $booked-date-not-in-month-text-color;
         }
-
-        &:last-child {
-          @include dateGradient($booked-bg-color, rgba(0,0,0,0), $booked-date-text-color, $date-text-color, $booked-date-not-in-month-text-color, $date-not-in-month-text-color);
-        }
       }
     }
 
-    &.next-booked {
-      li:last-child {
-        @include dateGradient(rgba(0,0,0,0), $booked-bg-color, $date-text-color, $booked-date-text-color, $date-not-in-month-text-color, $booked-date-not-in-month-text-color);
-      }
+    &:not(.booked).hovered.next-booked {
+      @include dateGradient($hovered-date-bg-color, $booked-date-bg-color, $hovered-date-text-color, $booked-date-text-color, $hovered-date-not-in-month-text-color, $booked-date-not-in-month-text-color);
     }
 
-    &.booked.next-hovered {
-      li:last-child {
-        @include dateGradient($booked-bg-color, $hovered-bg-color, $booked-date-text-color, $hovered-date-text-color, $booked-date-not-in-month-text-color, $hovered-date-not-in-month-text-color);
-      }
+    &:not(.booked).hovered:not(.next-booked) {
+      @include dateGradient($hovered-date-bg-color, $date-bg-color, $hovered-date-text-color, $date-text-color, $hovered-date-not-in-month-text-color, $date-not-in-month-text-color);
     }
 
-    &.next-booked.hovered {
-      li:last-child {
-        @include dateGradient($hovered-bg-color, $booked-bg-color, $hovered-date-text-color, $booked-date-text-color, $hovered-date-not-in-month-text-color, $booked-date-not-in-month-text-color);
-      }
+    &:not(.booked):not(.hovered).next-booked {
+      @include dateGradient($date-bg-color, $booked-date-bg-color, $date-text-color, $booked-date-text-color, $date-not-in-month-text-color, $booked-date-not-in-month-text-color);
     }
 
-    &.booked.next-booked {
-      li:last-child {
-        span {
-          @include removeTextGradient();
-        }
+    &:not(.booked).next-hovered:not(.next-booked) {
+      @include dateGradient($date-bg-color, $hovered-date-bg-color, $date-text-color, $hovered-date-text-color, $date-not-in-month-text-color, $hovered-date-not-in-month-text-color);
+    }
 
-        background: $booked-bg-color;
-        color: $booked-date-text-color;
+    &.booked:not(.next-hovered):not(.next-booked) {
+      @include dateGradient($booked-date-bg-color, $date-bg-color, $booked-date-text-color, $date-text-color, $booked-date-not-in-month-text-color, $date-not-in-month-text-color);
+    }
 
-        &.not-in-month {
-          color: $booked-date-not-in-month-text-color;
-        }
-      }
+    &.booked.next-hovered:not(.next-booked) {
+      @include dateGradient($booked-date-bg-color, $hovered-date-bg-color, $booked-date-text-color, $hovered-date-text-color, $booked-date-not-in-month-text-color, $hovered-date-not-in-month-text-color);
     }
   }
 }
