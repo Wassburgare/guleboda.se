@@ -7,6 +7,8 @@ import { bindActionCreators } from 'redux';
 import Calendar from 'src/calendar/Calendar';
 import { fetchBookings, createBooking, deleteBooking } from 'src/bookings/actions';
 
+import './Book.scss';
+
 class Book extends Component {
   componentWillMount() {
     this.props.fetchBookings();
@@ -28,8 +30,8 @@ class Book extends Component {
 
   render() {
     return (
-      <div>
-        <Calendar onWeekClick={this.onWeekClick} />
+      <div className="book">
+        <Calendar onWeekClick={this.onWeekClick} canBook />
       </div>
     );
   }
