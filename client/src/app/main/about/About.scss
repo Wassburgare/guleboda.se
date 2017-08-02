@@ -35,7 +35,7 @@ $imgPadding: (100 - $imgWidth * $imgRowCount) / ($imgRowCount - 1);
       display: block;
     }
 
-    &:not(:first-child):not(:nth-child(#{$imgRowCount + 1})) {
+    &:not(:nth-child(#{$imgRowCount}n + 1)) {
       padding-left: $imgPadding * 1%;
     }
   }
