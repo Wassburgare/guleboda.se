@@ -8,9 +8,9 @@
     "email": "daniel.wassbjer@gmail.com"
   },
   "scripts": {
-    "dev-server": "webpack-dev-server",
+    "dev-server": "webpack-dev-server --config webpack.dev.js",
     "start": "npm-run-all -p watch-trans dev-server",
-    "build": "echo \"Error: no build specified\" && exit 1",
+    "build": "webpack --config webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "trans": "node scripts/translationRunner.js",
     "watch-trans": "nodemon -e jsx --exec \"yarn run trans\"",
@@ -49,12 +49,14 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^4.0.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
+    "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.29.0",
     "interpolate-html-plugin": "^2.0.0",
@@ -63,6 +65,7 @@
     "npm-run-all": "^4.0.2",
     "postcss-loader": "^2.0.6",
     "url-loader": "^0.5.9",
-    "webpack": "^3.3.0"
+    "webpack": "^3.3.0",
+    "webpack-merge": "^4.1.0"
   }
 }
