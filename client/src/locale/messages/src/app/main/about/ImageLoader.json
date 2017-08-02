@@ -1,5 +1,17 @@
 [
   {
+    "id": "About.image.livingRoom",
+    "defaultMessage": "Living room..."
+  },
+  {
+    "id": "About.image.kitchen",
+    "defaultMessage": "This is how a kitchen may look."
+  },
+  {
+    "id": "About.image.house1",
+    "defaultMessage": "This is an image of a house."
+  },
+  {
     "id": "About.image.cows",
     "defaultMessage": "Live in an idyllic farm environment."
   },
@@ -10,5 +22,21 @@
   {
     "id": "About.image.path",
     "defaultMessage": "Go explore along dirt roads and crooked paths. Listen to the nature without any noise."
+  },
+  {
+    "id": "About.image.lake1",
+    "defaultMessage": "Viren."
+  },
+  {
+    "id": "About.image.lake2",
+    "defaultMessage": "Another picture of Viren."
+  },
+  {
+    "id": "About.image.lake3",
+    "defaultMessage": "And again."
+  },
+  {
+    "id": "About.image.meadow",
+    "defaultMessage": "Green grass."
   }
 ]
