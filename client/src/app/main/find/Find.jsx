@@ -15,7 +15,12 @@ class Find extends Component {
           />
         </h2>
         <hr />
-        <Lorem count="1" />
+        <p>
+          <FormattedMessage
+            id={'Find.desc'}
+            defaultMessage={'Description on how to get here.'}
+          />
+        </p>
         <div className="eniro-map">
           <iframe
             title="eniro"

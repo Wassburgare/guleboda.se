@@ -20,6 +20,14 @@
     "defaultMessage": "Things to do"
   },
   {
+    "id": "Todo.desc",
+    "defaultMessage": "Description of things to do."
+  },
+  {
+    "id": "Todo.korro.desc",
+    "defaultMessage": "Description of Korrö."
+  },
+  {
     "id": "Todo.korro.linkText",
     "defaultMessage": "www.korro.se"
   },
@@ -28,12 +36,24 @@
     "defaultMessage": "Kingdom of Crystal"
   },
   {
+    "id": "Todo.glasriket.desc",
+    "defaultMessage": "Description of Kingdom of Crystal."
+  },
+  {
     "id": "Todo.glasriket.linkText",
     "defaultMessage": "www.glasriket.se/en/The-Glassworks"
   },
   {
+    "id": "Todo.kosta.desc",
+    "defaultMessage": "Description of Kosta Outlet."
+  },
+  {
     "id": "Todo.kosta.linkText",
     "defaultMessage": "www.kostaoutlet.se"
+  },
+  {
+    "id": "Todo.utvandrarleden.desc",
+    "defaultMessage": "Description of Utvandrarleden."
   },
   {
     "id": "Todo.utvandrarleden.linkText",

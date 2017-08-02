@@ -2,5 +2,9 @@
   {
     "id": "Find.heading",
     "defaultMessage": "Get here"
+  },
+  {
+    "id": "Find.desc",
+    "defaultMessage": "Description on how to get here."
   }
 ]

@@ -34,13 +34,23 @@ class Todo extends Component {
           />
         </h2>
         <hr />
-        <Lorem count="1" />
+        <p>
+          <FormattedMessage
+            id={'Todo.desc'}
+            defaultMessage={'Description of things to do.'}
+          />
+        </p>
 
         <div className="todo-item-row">
           <div className="todo-item">
             <img src={'https://www.placecage.com/gif/450/280'} alt="" />
             <h3>Korrö Hantverksby</h3>
-            <Lorem count="1" />
+            <p>
+              <FormattedMessage
+                id={'Todo.korro.desc'}
+                defaultMessage={'Description of Korrö.'}
+              />
+            </p>
             <a
               href={this.props.intl.formatMessage(messages.korroHref)}
               target="_blank"
@@ -60,7 +70,12 @@ class Todo extends Component {
                 defaultMessage={'Kingdom of Crystal'}
               />
             </h3>
-            <Lorem count="1" />
+            <p>
+              <FormattedMessage
+                id={'Todo.glasriket.desc'}
+                defaultMessage={'Description of Kingdom of Crystal.'}
+              />
+            </p>
             <a
               href={this.props.intl.formatMessage(messages.glasriketHref)}
               target="_blank"
@@ -78,7 +93,12 @@ class Todo extends Component {
           <div className="todo-item">
             <img src={'https://www.placecage.com/gif/452/280'} alt="" />
             <h3>Kosta Outlet</h3>
-            <Lorem count="1" />
+            <p>
+              <FormattedMessage
+                id={'Todo.kosta.desc'}
+                defaultMessage={'Description of Kosta Outlet.'}
+              />
+            </p>
             <a
               href={this.props.intl.formatMessage(messages.kostaHref)}
               target="_blank"
@@ -93,7 +113,12 @@ class Todo extends Component {
           <div className="todo-item">
             <img src={'https://www.placecage.com/gif/453/280'} alt="" />
             <h3>Utvandrarleden</h3>
-            <Lorem count="1" />
+            <p>
+              <FormattedMessage
+                id={'Todo.utvandrarleden.desc'}
+                defaultMessage={'Description of Utvandrarleden.'}
+              />
+            </p>
             <a
               href={this.props.intl.formatMessage(messages.utvandrarledenHref)}
               target="_blank"

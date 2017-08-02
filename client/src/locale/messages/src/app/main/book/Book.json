@@ -2,5 +2,25 @@
   {
     "id": "Book.heading",
     "defaultMessage": "Book"
+  },
+  {
+    "id": "Book.desc.price",
+    "defaultMessage": "Price."
+  },
+  {
+    "id": "Book.desc.time",
+    "defaultMessage": "Time."
+  },
+  {
+    "id": "Book.desc.cleaning",
+    "defaultMessage": "Cleaning."
+  },
+  {
+    "id": "Book.desc.contact",
+    "defaultMessage": "Contact."
+  },
+  {
+    "id": "Book.desc.bankgiro",
+    "defaultMessage": "Bank giro."
   }
 ]

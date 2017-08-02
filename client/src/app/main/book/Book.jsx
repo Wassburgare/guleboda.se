@@ -26,9 +26,38 @@ class Book extends Component {
           />
         </h2>
         <hr />
-        <Lorem count="2" />
+        <p>
+          <FormattedMessage
+            id={'Book.desc.price'}
+            defaultMessage={'Price.'}
+          />
+        </p>
+        <p>
+          <FormattedMessage
+            id={'Book.desc.time'}
+            defaultMessage={'Time.'}
+          />
+        </p>
+        <p>
+          <FormattedMessage
+            id={'Book.desc.cleaning'}
+            defaultMessage={'Cleaning.'}
+          />
+        </p>
         <Calendar />
-        <Lorem count="1" />
+        <p className="contact">
+          <FormattedMessage
+            id={'Book.desc.contact'}
+            defaultMessage={'Contact.'}
+          />
+          <a className="tel" href="tel:+46-703-43-98-45">+46 703 43 98 45</a>
+        </p>
+        <p className="bankgiro">
+          <FormattedMessage
+            id={'Book.desc.bankgiro'}
+            defaultMessage={'Bank giro.'}
+          />
+        </p>
       </div>
     );
   }

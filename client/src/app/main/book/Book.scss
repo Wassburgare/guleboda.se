@@ -1,2 +1,18 @@
 .book {
+  .calendar {
+    margin: 3em 0;
+  }
+
+  .tel {
+    display: inline-block;
+    padding-left: .5em;
+  }
+
+  .contact, .bankgiro, .tel {
+    font-weight: bold;
+  }
+
+  .bankgiro {
+    margin-bottom: 3em;
+  }
 }
