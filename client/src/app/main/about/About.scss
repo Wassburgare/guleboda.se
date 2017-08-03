@@ -6,7 +6,7 @@ $summary-box-text-color: white;
 
 $imgRowCount: 3;
 $imgWidth: (100 / $imgRowCount) - 1;
-$imgPadding: (100 - $imgWidth * $imgRowCount) / ($imgRowCount - 1);
+$imgMargin: (100 - $imgWidth * $imgRowCount) / ($imgRowCount - 1);
 
 .about {
   .summary-box {
@@ -29,6 +29,7 @@ $imgPadding: (100 - $imgWidth * $imgRowCount) / ($imgRowCount - 1);
     display: inline-block;
     width: $imgWidth * 1%;
     padding-bottom: 1.25%;
+    transition: opacity .1s ease-out;
 
     img {
       width: 100%;
@@ -36,7 +37,12 @@ $imgPadding: (100 - $imgWidth * $imgRowCount) / ($imgRowCount - 1);
     }
 
     &:not(:nth-child(#{$imgRowCount}n + 1)) {
-      padding-left: $imgPadding * 1%;
+      margin-left: $imgMargin * 1%;
+    }
+
+    &:hover {
+      cursor: pointer;
+      opacity: .85;
     }
   }
 }
