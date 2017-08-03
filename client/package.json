@@ -10,7 +10,7 @@
   "scripts": {
     "dev-server": "webpack-dev-server --config webpack.dev.js",
     "start": "npm-run-all -p watch-trans dev-server",
-    "build": "webpack --config webpack.prod.js",
+    "build": "rimraf build && webpack --config webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "trans": "node scripts/translationRunner.js",
     "watch-trans": "nodemon -e jsx --exec \"yarn run trans\"",
@@ -64,6 +64,7 @@
     "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.2",
     "postcss-loader": "^2.0.6",
+    "rimraf": "^2.6.1",
     "url-loader": "^0.5.9",
     "webpack": "^3.3.0",
     "webpack-merge": "^4.1.0"

@@ -13,6 +13,8 @@
     "install-server": "cd server && yarn install",
     "install-client": "cd client && yarn install",
     "postinstall": "yarn run install-server && yarn run install-client",
+    "build-client": "cd client && yarn build",
+    "build": "yarn run build-client",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
