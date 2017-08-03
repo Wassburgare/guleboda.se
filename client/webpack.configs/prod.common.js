@@ -86,6 +86,7 @@ module.exports = {
       compress: {
         warnings: false,
         comparisons: false,
+        drop_console: true,
       },
       output: {
         comments: false,
