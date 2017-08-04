@@ -8,12 +8,14 @@ class Find extends Component {
   render() {
     return (
       <div className="find">
-        <h2>
-          <FormattedMessage
-            id={'Find.heading'}
-            defaultMessage={'Get here'}
-          />
-        </h2>
+        <a name="find">
+          <h2>
+            <FormattedMessage
+              id={'Find.heading'}
+              defaultMessage={'Get here'}
+            />
+          </h2>
+        </a>
         <hr />
         <p>
           <FormattedMessage

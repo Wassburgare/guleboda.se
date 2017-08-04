@@ -19,12 +19,14 @@ class Book extends Component {
   render() {
     return (
       <div className="book">
-        <h2>
-          <FormattedMessage
-            id={'Book.heading'}
-            defaultMessage={'Book'}
-          />
-        </h2>
+        <a name="book" >
+          <h2>
+            <FormattedMessage
+              id={'Book.heading'}
+              defaultMessage={'Book'}
+            />
+          </h2>
+        </a>
         <hr />
         <p>
           <FormattedMessage

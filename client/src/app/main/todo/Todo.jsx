@@ -27,12 +27,14 @@ class Todo extends Component {
   render() {
     return (
       <div className="todo">
-        <h2>
-          <FormattedMessage
-            id={'Todo.heading'}
-            defaultMessage={'Things to do'}
-          />
-        </h2>
+        <a name="todo">
+          <h2>
+            <FormattedMessage
+              id={'Todo.heading'}
+              defaultMessage={'Things to do'}
+            />
+          </h2>
+        </a>
         <hr />
         <p>
           <FormattedMessage

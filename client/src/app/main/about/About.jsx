@@ -24,12 +24,14 @@ class About extends Component {
   render() {
     return (
       <div className="about">
-        <h2>
-          <FormattedMessage
-            id={'About.heading'}
-            defaultMessage={'About the house'}
-          />
-        </h2>
+        <a name="about">
+          <h2>
+            <FormattedMessage
+              id={'About.heading'}
+              defaultMessage={'About the house'}
+            />
+          </h2>
+        </a>
         <hr />
         <div className="summary-box">
           <h2>
