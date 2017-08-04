@@ -125,16 +125,15 @@ $hovered-date-not-in-month-text-color: #bbff99;
     }
   }
 
-  // Styling
-
-  &:not(.bookable) {
-    .week-row {
-      pointer-events: none;
-    }
+  &:not(.bookable) .week-row > div:focus {
+    outline: none;
   }
 
+  // Styling
   .week-row {
-    cursor: pointer;
+    .bookable {
+      cursor: pointer;
+    }
 
     .week-number {
       color: $week-number-text-color;
