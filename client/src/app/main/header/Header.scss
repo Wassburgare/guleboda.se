@@ -1,5 +1,9 @@
 $text-color: white;
 
+$book-button-border-color: white;
+$book-button-bg-color: rgba(0, 0, 0, .2);
+$book-button-bg-color-hovered: rgba(120, 120, 120, .2);
+
 .header {
   position: relative;
 
@@ -10,15 +14,16 @@ $text-color: white;
   background: url('./header-bg.png');
 
   & * {
-    color: $text-color !important;
+    color: $text-color;
   }
 
   & h1 {
     display: inline-block;
     padding-top: 50px;
+    margin-bottom: .5em;
   }
 
-  & p {
+  & > p {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 30px;
     font-weight: bold;
@@ -43,6 +48,33 @@ $text-color: white;
       &:not(:last-child) {
         margin-right: .5%;
       }
+    }
+  }
+
+  a[type="button"] {
+    display: inline-block;
+    padding: .5em 1.6em;
+    margin-top: 1.3em;
+
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: lighter;
+    font-size: 1.5em;
+
+    text-transform: uppercase;
+    text-indent: 6pt;
+    letter-spacing: 6pt;
+
+    user-select: none;
+
+    border: 2pt solid $book-button-border-color;
+
+    background-color: $book-button-bg-color;
+
+    cursor: pointer;
+    transition: background-color .1s ease-out;
+
+    &:hover {
+      background-color: $book-button-bg-color-hovered;
     }
   }
 }

@@ -44,6 +44,12 @@ class Header extends Component {
             defaultMessage={'Rent a summer house in idyllic Småland, only 50 meters from the lake'}
           />
         </p>
+        <a type="button" href="#book">
+          <FormattedMessage
+            id={'Heading.book'}
+            defaultMessage={'Book'}
+          />
+        </a>
       </div>
     );
   }
