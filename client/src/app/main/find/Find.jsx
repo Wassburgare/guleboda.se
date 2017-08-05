@@ -26,7 +26,7 @@ class Find extends Component {
         <div className="eniro-map">
           <iframe
             title="eniro"
-            src="https://kartor.eniro.se/m/qN25Z?embed=true&center=56.617709748963904,15.232543945312498&zoom=12&layer=map&scroll=false"
+            src="https://kartor.eniro.se/m/qN25Z?embed=true&center=56.617709748963904,15.232543945312498&zoom=7&layer=map&scroll=false"
           />
         </div>
       </div>
