@@ -4,7 +4,15 @@
     "defaultMessage": "About the house"
   },
   {
-    "id": "About.quickFacts",
+    "id": "About.quickFacts.header",
     "defaultMessage": "Quick facts"
+  },
+  {
+    "id": "About.quickFacts.bullets",
+    "defaultMessage": "6 beds, extra beds can be arranged\n\n2 bedrooms, living room + kitchen\n\n2 bathrooms (one with shower)\n\n90 sq m, living space\n\nWinterized\n\nNew kitchen + bathroom (2017)\n\nSummer price, 6000 SEK/week"
+  },
+  {
+    "id": "About.desc",
+    "defaultMessage": "A little text about the house."
   }
 ]

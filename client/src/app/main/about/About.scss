@@ -9,9 +9,18 @@ $imgWidth: (100 / $imgRowCount) - 1;
 $imgMargin: (100 - $imgWidth * $imgRowCount) / ($imgRowCount - 1);
 
 .about {
+  & > p {
+    white-space: pre-wrap;
+  }
+
   .summary-box {
     * {
       color: $summary-box-text-color !important;
+    }
+
+    & > p {
+      white-space: pre-wrap;
+      line-height: 1.1em;
     }
 
     background-color: $summary-box-bg-color;

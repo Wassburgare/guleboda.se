@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Lorem from 'react-lorem-component';
 import { PhotoSwipeGallery } from 'react-photoswipe';
 import 'react-photoswipe/lib/photoswipe.css';
 
@@ -36,13 +35,23 @@ class About extends Component {
         <div className="summary-box">
           <h2>
             <FormattedMessage
-              id={'About.quickFacts'}
+              id={'About.quickFacts.header'}
               defaultMessage={'Quick facts'}
             />
           </h2>
-          <Lorem paragraphLowerBound={1} paragraphUpperBound={1} sentenceUpperBound={7} />
+          <p>
+            <FormattedMessage
+              id={'About.quickFacts.bullets'}
+              defaultMessage={'6 beds, extra beds can be arranged\n\n2 bedrooms, living room + kitchen\n\n2 bathrooms (one with shower)\n\n90 sq m, living space\n\nWinterized\n\nNew kitchen + bathroom (2017)\n\nSummer price, 6000 SEK/week'}
+            />
+          </p>
         </div>
-        <Lorem />
+        <p>
+          <FormattedMessage
+            id={'About.desc'}
+            defaultMessage={'A little text about the house.'}
+          />
+        </p>
         <PhotoSwipeGallery
           items={imageItems(this.props.intl)}
           options={options}
