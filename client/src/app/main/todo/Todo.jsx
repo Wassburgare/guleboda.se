@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import Lorem from 'react-lorem-component';
 import { FormattedMessage, injectIntl, defineMessages, intlShape } from 'react-intl';
 
 import './Todo.scss';
+
+import korroImg from './images/korro.jpg';
+import glasriketImg from './images/glasriket.jpg';
+import kostaImg from './images/kosta.jpg';
+import utvandrarledenImg from './images/utvandrarleden.jpg';
 
 const messages = defineMessages({
   korroHref: {
@@ -45,7 +49,13 @@ class Todo extends Component {
 
         <div className="todo-item-row">
           <div className="todo-item">
-            <img src={'https://www.placecage.com/gif/450/280'} alt="" />
+            <a
+              href={this.props.intl.formatMessage(messages.korroHref)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={korroImg} alt="" />
+            </a>
             <h3>Korrö Hantverksby</h3>
             <p>
               <FormattedMessage
@@ -65,7 +75,13 @@ class Todo extends Component {
             </a>
           </div>
           <div className="todo-item">
-            <img src={'https://www.placecage.com/gif/451/280'} alt="" />
+            <a
+              href={this.props.intl.formatMessage(messages.glasriketHref)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={glasriketImg} alt="" />
+            </a>
             <h3>
               <FormattedMessage
                 id={'Todo.glasriket.heading'}
@@ -93,7 +109,13 @@ class Todo extends Component {
 
         <div className="todo-item-row">
           <div className="todo-item">
-            <img src={'https://www.placecage.com/gif/452/280'} alt="" />
+            <a
+              href={this.props.intl.formatMessage(messages.kostaHref)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={kostaImg} alt="" />
+            </a>
             <h3>Kosta Outlet</h3>
             <p>
               <FormattedMessage
@@ -113,7 +135,13 @@ class Todo extends Component {
             </a>
           </div>
           <div className="todo-item">
-            <img src={'https://www.placecage.com/gif/453/280'} alt="" />
+            <a
+              href={this.props.intl.formatMessage(messages.utvandrarledenHref)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={utvandrarledenImg} alt="" />
+            </a>
             <h3>Utvandrarleden</h3>
             <p>
               <FormattedMessage
