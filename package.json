@@ -7,14 +7,16 @@
   },
   "private": true,
   "scripts": {
-    "start": "concurrently \"yarn run start-client\" \"yarn run start-server\"",
+    "start": "concurrently \"yarn start-client\" \"yarn start-server\"",
     "start-server": "cd server && yarn start",
     "start-client": "cd client && yarn start",
     "install-server": "cd server && yarn install",
     "install-client": "cd client && yarn install",
-    "postinstall": "yarn run install-server && yarn run install-client",
+    "postinstall": "yarn install-server && yarn install-client",
     "build-client": "cd client && yarn build",
-    "build": "yarn run build-client",
+    "build": "yarn build-client",
+    "remote-update-client": "cd client && yarn remote-update",
+    "remote-update": "yarn remote-update-client",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
