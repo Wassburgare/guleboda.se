@@ -59,6 +59,7 @@ class Book extends Component {
             id={'Book.desc.bankgiro'}
             defaultMessage={'Bank giro.'}
           />
+          <span className="bg-number">8006-9,644 002 211-6</span>
         </p>
       </div>
     );
