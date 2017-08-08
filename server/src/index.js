@@ -1,14 +1,14 @@
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
-const moment = require('moment');
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
+import bcrypt from 'bcrypt';
+import moment from 'moment';
 
-const User = require('./bookshelf/models').User;
-const Session = require('./bookshelf/models').Session;
-const Booking = require('./bookshelf/models').Booking;
+import { User } from './bookshelf/models';
+import { Session } from './bookshelf/models';
+import { Booking } from './bookshelf/models';
 
-const Bookings = require('./bookshelf/collections').Bookings;
+import { Bookings } from './bookshelf/collections';
 
 const app = express();
 

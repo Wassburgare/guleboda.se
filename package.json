@@ -14,7 +14,8 @@
     "install-client": "cd client && yarn install",
     "postinstall": "yarn install-server && yarn install-client",
     "build-client": "cd client && yarn build",
-    "build": "yarn build-client",
+    "build-server": "cd server && yarn build",
+    "build": "yarn build-client && yarn build-server",
     "remote-update-client": "cd client && yarn remote-update",
     "remote-update": "yarn remote-update-client",
     "test": "echo \"Error: no test specified\" && exit 1"
