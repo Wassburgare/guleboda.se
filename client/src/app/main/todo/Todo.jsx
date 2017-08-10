@@ -43,7 +43,7 @@ class Todo extends Component {
         <p>
           <FormattedMessage
             id={'Todo.desc'}
-            defaultMessage={'Description of things to do.'}
+            defaultMessage={'Close to the cottage are Korrö Hantverksby, numerous glassworks, Kosta Outlet and Utvandrarleden, among others. And above all, ask Anders, your host of the cottage. They have lived in the village for generations and can give much advice on things to do in this strongly traditional area.'}
           />
         </p>
 
@@ -60,7 +60,7 @@ class Todo extends Component {
             <p>
               <FormattedMessage
                 id={'Todo.korro.desc'}
-                defaultMessage={'Description of Korrö.'}
+                defaultMessage={'Just within five kilometers is Korrö Hantverksby. This establishment is very popular and well worth a visit. There are things to do for most people.'}
               />
             </p>
             <a
@@ -91,7 +91,7 @@ class Todo extends Component {
             <p>
               <FormattedMessage
                 id={'Todo.glasriket.desc'}
-                defaultMessage={'Description of Kingdom of Crystal.'}
+                defaultMessage={'Visit glassworks in Småland. We are located right in the middle of all glassworks, close to many of the most famous ones.'}
               />
             </p>
             <a
@@ -120,7 +120,7 @@ class Todo extends Component {
             <p>
               <FormattedMessage
                 id={'Todo.kosta.desc'}
-                defaultMessage={'Description of Kosta Outlet.'}
+                defaultMessage={'Sweden\'s biggest shopping outlet. It\'s only 35 kilometers to this big outlet.'}
               />
             </p>
             <a
@@ -146,7 +146,7 @@ class Todo extends Component {
             <p>
               <FormattedMessage
                 id={'Todo.utvandrarleden.desc'}
-                defaultMessage={'Description of Utvandrarleden.'}
+                defaultMessage={'Hike, paddle, and bike. Along this world famous nature trail you get to follow Vilhem Moberg\'s footsteps.'}
               />
             </p>
             <a

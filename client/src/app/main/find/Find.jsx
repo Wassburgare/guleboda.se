@@ -20,7 +20,7 @@ class Find extends Component {
         <p>
           <FormattedMessage
             id={'Find.desc'}
-            defaultMessage={'Description on how to get here.'}
+            defaultMessage={'The cottage is located 5 kilometers south of Korrö, 40 kilometers south of Växjö and 60 kilometers from Karlskrona. The cottage has what many seek: seclusion, close to farms and no large roads nearby.'}
           />
         </p>
         <div className="eniro-map">

@@ -6,11 +6,14 @@
 
   .tel, .bg-number {
     display: inline-block;
-    margin-left: .5em;
   }
 
   .contact, .bankgiro, .tel {
     font-weight: bold;
+
+    span {
+      margin-right: .5em;
+    }
   }
 
   .bankgiro {

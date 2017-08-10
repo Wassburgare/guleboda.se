@@ -25,15 +25,15 @@ import meadowThumb from './images/thumbnails/meadow.jpg';
 const messages = defineMessages({
   livingRoom: {
     id: 'About.image.livingRoom',
-    defaultMessage: 'Living room...',
+    defaultMessage: 'Living room with a fireplace. The house is decorated with an elder look to preserve the feeling of elder farmhouse.',
   },
   kitchen: {
     id: 'About.image.kitchen',
-    defaultMessage: 'This is how a kitchen may look.',
+    defaultMessage: 'The kitchen has been renovated with a retro style (year 2017).',
   },
   house1: {
     id: 'About.image.house1',
-    defaultMessage: 'This is an image of a house.',
+    defaultMessage: 'Here the house is seen with lilic pergola, everything for lazy, wonderful days.',
   },
   cows: {
     id: 'About.image.cows',
@@ -49,19 +49,19 @@ const messages = defineMessages({
   },
   lake1: {
     id: 'About.image.lake1',
-    defaultMessage: 'Viren.',
+    defaultMessage: 'Water lily bay, with a rich birdlife.',
   },
   lake2: {
     id: 'About.image.lake2',
-    defaultMessage: 'Another picture of Viren.',
+    defaultMessage: 'Perfect place for a picnic, and to see the sunset.',
   },
   lake3: {
     id: 'About.image.lake3',
-    defaultMessage: 'And again.',
+    defaultMessage: 'Use the boat for a row and fishing.',
   },
   meadow: {
     id: 'About.image.meadow',
-    defaultMessage: 'Green grass.',
+    defaultMessage: 'Old-fashioned mowing field. Here you find flowers and plants that are now hard to find in a modern farming environment.',
   },
 });
 

@@ -35,13 +35,13 @@ class Header extends Component {
         <h1>
           <FormattedMessage
             id={'Header.main'}
-            defaultMessage={'Summer house by the lake'}
+            defaultMessage={'Summer cottage by the lake'}
           />
         </h1>
         <p>
           <FormattedMessage
             id={'Header.sub'}
-            defaultMessage={'Rent a summer house in idyllic Småland, only 50 meters from the lake'}
+            defaultMessage={'Rent a summer cottage in idyllic Småland, only 50 meters from the lake'}
           />
         </p>
         <a type="button" href="#book">
