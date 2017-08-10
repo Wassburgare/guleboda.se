@@ -11,7 +11,9 @@ $book-button-bg-color-hovered: rgba(120, 120, 120, .2);
   height: 350px;
 
   text-align: center;
-  background: url('./header-bg.png');
+  background-image: url('./header-bg.png');
+  background-size: 100% auto;
+
 
   & * {
     color: $text-color;
