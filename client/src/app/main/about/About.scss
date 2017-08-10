@@ -4,7 +4,7 @@ $summary-box-margin: 20px;
 $summary-box-width: 400px;
 $summary-box-text-color: white;
 
-$imgRowCount: 3;
+$imgRowCount: 6;
 $imgWidth: (100 / $imgRowCount) - 1;
 $imgMargin: (100 - $imgWidth * $imgRowCount) / ($imgRowCount - 1);
 
@@ -30,6 +30,10 @@ $imgMargin: (100 - $imgWidth * $imgRowCount) / ($imgRowCount - 1);
     width: $summary-box-width - $summary-box-padding * 2;
   }
 
+  .click-images {
+    font-weight: bold;
+  }
+
   .pswp-thumbnails {
     font-size: 0;
   }
@@ -53,5 +57,14 @@ $imgMargin: (100 - $imgWidth * $imgRowCount) / ($imgRowCount - 1);
       cursor: pointer;
       opacity: .85;
     }
+  }
+
+  .pswp__caption__center {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 1.4em;
+    line-height: 1.4em;
+    max-width: 700px;
+    width: fit-content;
   }
 }

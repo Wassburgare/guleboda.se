@@ -14,5 +14,9 @@
   {
     "id": "About.desc",
     "defaultMessage": "A little text about the house."
+  },
+  {
+    "id": "About.images",
+    "defaultMessage": "Click the pictures below to see our slideshow."
   }
 ]

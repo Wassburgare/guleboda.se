@@ -52,6 +52,12 @@ class About extends Component {
             defaultMessage={'A little text about the house.'}
           />
         </p>
+        <p className="click-images">
+          <FormattedMessage
+            id={'About.images'}
+            defaultMessage={'Click the pictures below to see our slideshow.'}
+          />
+        </p>
         <PhotoSwipeGallery
           items={imageItems(this.props.intl)}
           options={options}
