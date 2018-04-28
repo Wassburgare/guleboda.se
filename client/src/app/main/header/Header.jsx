@@ -3,12 +3,21 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import { scroller } from 'react-scroll';
 
 import { changeLocale } from 'src/locale/actions';
 
 import './Header.scss';
 
 class Header extends Component {
+  scrollToBook() {
+    scroller.scrollTo('book', {
+      duration: 1000,
+      delay: 0,
+      smooth: 'easeInOutQuad'
+    });
+  }
+
   render() {
     return (
       <div className="header">
@@ -44,7 +53,12 @@ class Header extends Component {
             defaultMessage={'Rent a summer cottage in idyllic Småland, only 50 meters from the lake'}
           />
         </p>
-        <a type="button" href="#book">
+        <a
+          type="button"
+          href="#book"
+          onClick={() => {
+            this.scrollToBook();
+          }}>
           <FormattedMessage
             id={'Heading.book'}
             defaultMessage={'Book'}
