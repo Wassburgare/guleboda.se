@@ -1,7 +1,4 @@
-import knexModule from 'knex';
-import bookshelfModule from 'bookshelf';
-
-const knex = knexModule({
+const knex = require('knex')({
   client: 'pg',
   connection: {
     host : 'localhost',
@@ -10,4 +7,4 @@ const knex = knexModule({
   }
 });
 
-export default bookshelfModule(knex);
+module.exports = require('bookshelf')(knex);

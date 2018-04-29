@@ -1,5 +1,5 @@
-import bookshelf from './';
-import { Booking } from './models';
+const bookshelf = require('./');
+const Booking = require('./models').Booking;
 
 exports.Bookings = bookshelf.Collection.extend({
   model: Booking,

@@ -1,7 +1,7 @@
-import bookshelf from './';
-import bcrypt from 'bcrypt';
-import uuidv4 from 'uuid/v4';
-import moment from 'moment';
+const bookshelf = require('./');
+const bcrypt = require('bcrypt');
+const uuidv4 = require('uuid/v4');
+const moment = require('moment');
 
 const Booking = bookshelf.Model.extend({
   tableName: 'bookings',
@@ -86,4 +86,6 @@ const User = bookshelf.Model.extend({
   },
 });
 
-export { Booking, User, Session };
+exports.Booking = Booking;
+exports.User = User;
+exports.Session = Session;

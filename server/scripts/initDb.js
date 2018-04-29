@@ -1,4 +1,4 @@
-import bookshelf from '../bookshelf';
+const bookshelf = require('../src/bookshelf');
 
 const createBookingsTable = bookshelf.knex.schema.dropTableIfExists('bookings').then(() => {
   console.log('Table "bookings" dropped');
