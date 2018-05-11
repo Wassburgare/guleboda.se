@@ -6,6 +6,8 @@ const devnull = require('dev-null');
 
 const archivePath = path.resolve(__dirname, 'build.tar.gz');
 const serverHome = '/home/wassburgare';
+const sitePublic = '/var/www/guleboda.se/html';
+const siteAdmin = '/var/www/admin.guleboda.se/html';
 const connection = new Client();
 
 const uploadFile = (sftp, srcFile, destFile) =>
@@ -28,7 +30,12 @@ const runCommand = command =>
     });
   });
 
-tar.c({ gzip: true, file: archivePath }, ['build'])
+tar.c(
+  {
+    gzip: true,
+    file: archivePath,
+    C: path.resolve(__dirname, '..'),
+  }, ['build'])
   .then(() =>
     new Promise((resolve, reject) => {
       connection.on('ready', () => {
@@ -45,10 +52,10 @@ tar.c({ gzip: true, file: archivePath }, ['build'])
               return Promise.resolve();
             })
             .then(() => runCommand(`tar -xvf ${serverHome}/build.tar.gz`))
-            .then(() => runCommand('rm -rf /var/www/guleboda.se/html/*'))
-            .then(() => runCommand(`mv ${serverHome}/build/guleboda.se/* /var/www/guleboda.se/html`))
-            .then(() => runCommand('rm -rf /var/www/admin.guleboda.se/html/*'))
-            .then(() => runCommand(`mv ${serverHome}/build/admin.guleboda.se/* /var/www/admin.guleboda.se/html`))
+            .then(() => runCommand(`rm -rf ${sitePublic}/*`))
+            .then(() => runCommand(`mv ${serverHome}/build/guleboda.se/* ${sitePublic}`))
+            .then(() => runCommand(`rm -rf ${siteAdmin}/*`))
+            .then(() => runCommand(`mv ${serverHome}/build/admin.guleboda.se/* ${siteAdmin}`))
             .then(() => runCommand(`rm -rf ${serverHome}/build`))
             .then(() => runCommand(`rm ${serverHome}/build.tar.gz`))
             .then(() => {
@@ -59,6 +66,7 @@ tar.c({ gzip: true, file: archivePath }, ['build'])
         });
       }).connect({
         host: 'guleboda.se',
+        port: 2810,
         username: 'wassburgare',
         agent: process.env.SSH_AUTH_SOCK,
       });
@@ -66,4 +74,7 @@ tar.c({ gzip: true, file: archivePath }, ['build'])
   )
   .then(() => {
     fs.unlinkSync(archivePath);
+  })
+  .catch((err) => {
+    console.log(err);
   });
