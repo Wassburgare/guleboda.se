@@ -79,7 +79,7 @@ app.post('/login', (req, res) => {
 app.post('/auth', (req, res) => {
   const token = req.cookies.token || '';
 
-  responseBody = { success: true }
+  const responseBody = { success: true }
 
   Session.auth(token).catch((e) => {
     // console.log(e);
